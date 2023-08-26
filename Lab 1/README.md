@@ -72,6 +72,27 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
 \*\***Describe your setting, players, activity and goals here.**\*\*
+Setting: In the central park, where passersby are scattered in a moderate density.
+
+Players: Users who use the DateLight app
+
+Activity: 
+1. User individually set up a dating profile on DateLight
+2. DateLight can be accessed on smartphones, tablets, and smart watches
+3. DateLight would auto-compare two profiles and output a matching score from 0-100 (least matchable to most matchable)
+4. Score 0-100 mirrors to the gradient shift of blue to bright pink
+5. DateLight will detect DateLight users within 10-meters radius and display colors to show compatibility
+6. When two users’ matching score is higher than 80, DateLight will alert both users that a high-matching candidate is within the radius, and their devices would vibrate/play sound
+
+Goals: To help user make friends/find love in a big city
+1.set up profile
+2.walk in the park (Light 
+3.pass by several people
+4. Nothing happened (profile match 40%)
+5. Light stays blue 
+6.Profile matches 80%
+7. Light turns pink 
+![plot](./Users/cieljiao/Desktop/1.png)
 
 Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
 
