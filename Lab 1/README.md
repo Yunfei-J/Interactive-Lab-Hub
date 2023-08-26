@@ -92,7 +92,7 @@ Goals: To help user make friends/find love in a big city
 5. Light stays blue 
 6.Profile matches 80%
 7. Light turns pink 
-![plot](./Users/cieljiao/Desktop/1.png)
+![Alt text](./Users/cieljiao/Desktop/1.png)
 
 Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
 
