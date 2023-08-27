@@ -139,9 +139,11 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
-\*\***Show the follow-up work here.**\*\*
+\*\***Show the follow-up work here.**\*\* 
 Additional to the primary goal of finding a romantic match, we have incorporated friend match as the second goal.
+#Friend match
 ![Alt text](./D1.png)
+#Romantic match
 ![Alt text](./D2.png)
 
 
