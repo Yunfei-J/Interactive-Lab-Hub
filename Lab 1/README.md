@@ -91,16 +91,18 @@ Goals: To help user make friends/find love in a big city
 4. Nothing happened (profile match 40%)
 5. Light stays blue 
 6. Profile matches 80%
-7. Light turns pink 
-![Alt text](./1.png)
+7. Light turns pink
+
 
 Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
 
 \*\***Include pictures of your storyboards here**\*\*
+![Alt text](./1.png)
 
 Present your ideas to the other people in your breakout room (or in small groups). You can just get feedback from one another or you can work together on the other parts of the lab.
 
 \*\***Summarize feedback you got here.**\*\*
+Besides light signals, we could also utilize audio or vibrations. Considering the cases where the users are in public settings, vibrations might be a better complement.
 
 
 ## Part B. Act out the Interaction
@@ -108,8 +110,10 @@ Present your ideas to the other people in your breakout room (or in small groups
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
+No.
 
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
+Yes. Initially, our plan was to instantly switch the color from white to pink when two matched users connect. However, as we delved into the implementation, we found that a color transition could be helpful to indicate the distance between the users. As these two users move closer to one another, the illumination of the necklace smoothly shifts, gradually progressing from white to pink. 
 
 
 ## Part C. Prototype the device
@@ -122,7 +126,10 @@ We invented this tool for this lab!
 
 If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
 
-\*\***Give us feedback on Tinkerbelle.**\*\*
+\*\***Give us feedback on Tinkerbelle.**\*\* 
+1.The color display on the device cannot be full-screened, which could lessen the visuals.
+2. Connection is unstable.
+3. A short delay between the web pages and mobile phones
 
 
 ## Part D. Wizard the device
@@ -133,6 +140,9 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
 \*\***Show the follow-up work here.**\*\*
+Additional to the primary goal of finding a romantic match, we have incorporated friend match as the second goal.
+![Alt text](./D1.png)
+![Alt text](./D2.png)
 
 
 ## Part E. Costume the device
