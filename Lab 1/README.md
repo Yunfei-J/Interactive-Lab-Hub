@@ -141,9 +141,9 @@ Now, hange the goal within the same setting, and update the interaction with the
 
 \*\***Show the follow-up work here.**\*\* 
 Additional to the primary goal of finding a romantic match, we have incorporated friend match as the second goal.
-### Friend match
+#### Friend match
 ![Alt text](./D1.png)
-### Romantic match
+#### Romantic match
 ![Alt text](./D2.png)
 
 
@@ -154,8 +154,12 @@ Only now should you start worrying about what the device should look like. Devel
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
 \*\***Include sketches of what your devices might look like here.**\*\*
+![Alt text](./E.png)
 
-\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
+\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\* 
+1.We designed the device to be wearable as a necklace because we want to separate the experience from regular phone activities. 
+2.Necklace also serves as a signifier of DateLight users, so that the matched users can recognize each other easier.
+
 
 
 ## Part F. Record
@@ -164,6 +168,8 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+_Members: Jamie Wang, Yiming Sheng, Yunfei Jiao_
 
 
 
