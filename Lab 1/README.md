@@ -141,9 +141,9 @@ Now, hange the goal within the same setting, and update the interaction with the
 
 \*\***Show the follow-up work here.**\*\* 
 Additional to the primary goal of finding a romantic match, we have incorporated friend match as the second goal.
-#Friend match
+### Friend match
 ![Alt text](./D1.png)
-#Romantic match
+### Romantic match
 ![Alt text](./D2.png)
 
 
