@@ -84,9 +84,9 @@ Activity:
 5. DateLight will detect DateLight users within 10-meters radius and display colors to show compatibility
 6. When two users’ matching score is higher than 80, DateLight will alert both users that a high-matching candidate is within the radius, and their devices would vibrate/play sound
 
-Goals: To help user make friends/find love in a big city
-1. Set up profile
-2. Walk in the park
+Goals: To help user make friends/find love in a big city 
+1. Set up profile 
+2. Walk in the park 
 3. Pass by several people
 4. Nothing happened (profile match 40%)
 5. Light stays blue 
