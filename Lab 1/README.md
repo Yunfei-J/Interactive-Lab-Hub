@@ -156,10 +156,11 @@ Only now should you start worrying about what the device should look like. Devel
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
 \*\***Include sketches of what your devices might look like here.**\*\* 
+#### Necklace 
 ![Alt text](./E.png)
-
+#### Bracelet 
 ![bracelet](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/90207e9f-a019-49aa-82f4-eb33e5a57464)
-
+#### LED Tattoo 
 <img width="486" alt="Screen Shot 2023-08-28 at 9 23 02 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/27795e6c-6aa0-417b-8668-8c80067145e6">
 
 
