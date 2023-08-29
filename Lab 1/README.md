@@ -112,9 +112,11 @@ Matching users solely based on heart rate is not sufficiently accurate, as confo
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
+
 No.
 
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
+
 Yes. Initially, our plan was to instantly switch the color from white to pink when two matched users connect. However, as we delved into the implementation, we found that a color transition could be helpful to indicate the distance between the users. As these two users move closer to one another, the illumination of the necklace smoothly shifts, gradually progressing from white to pink. 
 
 
