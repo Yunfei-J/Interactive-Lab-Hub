@@ -101,8 +101,10 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 
 Present your ideas to the other people in your breakout room (or in small groups). You can just get feedback from one another or you can work together on the other parts of the lab.
 
-\*\***Summarize feedback you got here.**\*\*
-Besides light signals, we could also utilize audio or vibrations. Considering the cases where the users are in public settings, vibrations might be a better complement.
+\*\***Summarize feedback you got here.**\*\* 
+Distance should be considered when designing which user in the range would DateLight compare to;
+Besides light signals, we could also utilize audio or vibrations. Considering the cases where the users are in public settings, vibrations might be a better complement;
+Matching users solely based on heart rate is not sufficiently accurate, as confounding factors such as workouts or nervousness before an interview can also influence users' heart rates.
 
 
 ## Part B. Act out the Interaction
@@ -155,6 +157,12 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Include sketches of what your devices might look like here.**\*\* 
 ![Alt text](./E.png)
+
+![bracelet](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/90207e9f-a019-49aa-82f4-eb33e5a57464)
+
+<img width="486" alt="Screen Shot 2023-08-28 at 9 23 02 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/27795e6c-6aa0-417b-8668-8c80067145e6">
+
+
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\* 
 
