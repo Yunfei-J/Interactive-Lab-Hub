@@ -3,6 +3,9 @@
 # Staging Interaction
 
 \*\***NAME OF COLLABORATORS HERE**\*\*
+Jamie Wang zw448
+Yiming Sheng ys2262
+Yunfei Jiao yj497
 
 In the original stage production of Peter Pan, Tinker Bell was represented by a darting light created by a small handheld mirror off-stage, reflecting a little circle of light from a powerful lamp. Tinkerbell communicates her presence through this light to the other characters. See more info [here](https://en.wikipedia.org/wiki/Tinker_Bell). 
 
@@ -201,6 +204,12 @@ You will be assigned three partners from another group. Go to their github pages
 
 \*\***Summarize feedback from your partners here.**\*\*
 
+Hard to differentiate users when more than 2 people are within the detection range
+Add pointer arrows to indicate the direction of potential matches
+Examine the feasibility of this product
+profile picture for each user could be removed
+
+
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
@@ -209,3 +218,133 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+
+IDD-2 Team members: Jamie Wang, Yiming Sheng, Yunfei Jiao *
+
+## Ex.1 Restroom communication system
+Part A.<br />
+Setting: Inside a public restroom. Lights are installed on the wall inside and outside of restroom stalls<br /> 
+Players: The person occupying a bathroom stall and the people waiting outside for using the restroom<br />
+Activity:<br />
+1. Inside the stall, the person using the restroom input the time they estimate themselves to be occupying the restroom<br />
+2. The time will be transferred to a light signal on the outside of the stall (5 min-blue, 10 min-yellow, above-orange).<br />
+3. People waiting outside sees the time and make decision to stay or switch restroom<br />
+Goals: Enhance bathroom usage efficiency<br />
+**Include pictures of your storyboards here**
+![Slide 16_9 - 6](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/bd331ad7-6a84-4cee-9f16-ce85a6c21f60)
+![Slide 16_9 - 7](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/ab3fa29f-1a18-40fc-b853-7f8dbad995cd)
+
+
+Part B
+**Are there things that seemed better on paper than acted out?**
+No.
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+No.
+Part F. Record
+**Take a video of your prototyped interaction.**
+
+
+
+https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/afed3a01-6abb-49b8-b2d8-91a0502d5119
+
+
+
+## Ex.2 Price-calculating light
+Part A.<br />
+Setting: In a grocery store<br />
+Players: A customer shopping in the store with a shopping cart<br />
+Activity: The customer sets a total amount of money he/she wants to keep the purchase under. As he/she puts an item into the cart, the price-calculating light will start adding up the prices and reflect the total amount to its color. After the amount exceeds the set goal, the light will turn red and vibrate intensely.<br />
+Goals: Help shoppers to stay rational by keeping track of their purchase amount so that they can adjust item selection in real-time<br />
+**Include pictures of your storyboards here**
+![Slide 16_9 - 5](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/a01b5606-57fe-4a20-8c9d-5ba67613bbbb)
+
+
+Part B
+**Are there things that seemed better on paper than acted out?**
+No.
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+No.
+Part F. Record
+**Take a video of your prototyped interaction.**
+
+
+https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/a692f021-954e-46ca-87e9-885cd794c089
+
+
+
+## Ex.3 Distraction preventive timer
+Part A.<br />
+Setting: Users are expected to set up the light cubes in their study environment.<br /> 
+Players: A user that needs to study/work<br />
+Activity: The user inputs their target focus time and pats the cube light to start the timer which is the light itself.  The light will visualize the procession of time and display special effects after accomplishment. It also detects distraction behaviors of the user and gives warning by vibration/changing light color to red.<br />
+Goals: The goal of the user is to keep focus on their tasks for a duration of time<br />
+**Include pictures of your storyboards here**
+![Slide 16_9 - 1 (1)](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/84ea8f62-da60-47ce-9028-3e2540d7e052)
+
+
+Part B
+**Are there things that seemed better on paper than acted out?**
+No.
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+No.
+Part F. Record
+**Take a video of your prototyped interaction.*
+
+
+
+https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/19cc1552-46fb-4dc4-9cb6-d1254a65af98
+
+
+## Ex.4 Ubiquitous direction-guidance
+Part A.<br />
+Setting: Along park pavements there installed a great number of direction-guiding devices<br />
+Players: An old man who doesn’t use cell phones and need directions to a destination<br />
+Activity: The old man walks to a device along the pavement and speaks out the destination he wants to get to. The device will confirm his input and then send signals to other devices along the path suggested for the man. The devices along the path will light up.<br />
+Goals: Give people visual guides in the real world to the place they want to reach.<br />
+**Include pictures of your storyboards here**
+![Slide 16_9 - 3](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/f2271520-4e6b-4028-ae13-03339c666e66)
+
+
+Part B
+**Are there things that seemed better on paper than acted out?**
+No.
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+No.
+
+
+## Ex.5 To-do list tracker
+Part A.<br />
+Setting: In a study room<br />
+Players: A student<br />
+Activity: The student writes up a to-do list and assigns each to-do item to a section of her to-do light board. Every time she finishes a task, she presses that corresponding section to turn the light off.<br />
+Goals: Give people a visualization of their working progress and motivations to keep working.<br />
+**Include pictures of your storyboards here**
+![Slide 16_9 - 2](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/15af5163-91bd-4508-abda-5ee2dea21dc6)
+
+
+Part B
+**Are there things that seemed better on paper than acted out?**
+No.
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+No.
+
+## Ex.6 Severe weather alert
+Part A.<br />
+Setting: A bridge crossing a river. Many people live near the bridge or commute through the bridge.<br />
+Players: Cars driving along the bridge and residents on the banks.<br />
+Activity: The severe-weather alert lights are installed along the bridge and the banks. The lights are connected to the city forecast station which sends signals whenever a severe weather condition is forecast to occur.<br />
+Goals: Alert nearby people to evacuate when extreme weathers come.<br />
+**Include pictures of your storyboards here**
+![Slide 16_9 - 4 (1)](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/4a0353cf-cbc4-4fb8-881d-de0799da74ab)
+
+
+Part B
+**Are there things that seemed better on paper than acted out?**
+No.
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+No.
+
+
+**Please indicate anyone you collaborated with on this Lab.** <br />
+Jamie Wang zw448<br />Yiming Sheng ys2262<br />Yunfei Jiao yj497
+
