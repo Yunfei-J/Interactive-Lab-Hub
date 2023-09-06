@@ -204,10 +204,10 @@ You will be assigned three partners from another group. Go to their github pages
 
 \*\***Summarize feedback from your partners here.**\*\*
 
-Hard to differentiate users when more than 2 people are within the detection range
-Add pointer arrows to indicate the direction of potential matches
-Examine the feasibility of this product
-profile picture for each user could be removed
+- Hard to differentiate users when more than 2 people are within the detection range <br /> 
+- Add pointer arrows to indicate the direction of potential matches <br /> 
+- Examine the feasibility of this product<br /> 
+- profile picture for each user could be removed
 
 
 ## Make it your own
