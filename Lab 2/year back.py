@@ -105,6 +105,7 @@ while True:
         current_year -= 5
     elif current_year==1983:
         image = Image.open("red.jpg")
+        disp.image(image)
         delta_sleep(5)
         current_year -= 5
         disp.image(image, rotation)
