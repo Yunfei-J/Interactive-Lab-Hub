@@ -5,6 +5,7 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
+import tkinter as tk
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -89,8 +90,9 @@ while True:
         disp.image(image, rotation)
         current_year -= 10
     else: 
-        draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
-        time.sleep(10)
+        def now_we_stop():
+            draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
+        tk.update()
         current_year -= 10
         disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
