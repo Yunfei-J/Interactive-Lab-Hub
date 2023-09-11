@@ -88,6 +88,39 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=400)
 
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+
+    x1 = 0.3*width
+    y1 = 0.05*height
+    x2 = 0.35*width
+    y2 = 0.17*height
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    x5 = 0.1*width
+    y5 = 0.65*height
+    x6 = 0.1*width
+    y6 = 0.80*height
+
+    display_date = strftime("%m/%d/%Y")
+    display_hour = strftime("%H:%M:%S")
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+    display_option1 = "> Forward to the back"
+    display_option2 = "> Back to the future"
+
+    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
+    draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
+    draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
     y = top
@@ -107,14 +140,7 @@ while True:
         disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
 
-    # if current_year>1983:
-    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-    #     print(current_year)
-    #     disp.image(image, rotation)
-    #     current_year -= 10
-    # else: 
-    #     draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
-        
+    
 
     # Display image.
     disp.image(image, rotation)
