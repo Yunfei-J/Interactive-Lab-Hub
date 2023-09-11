@@ -75,12 +75,12 @@ def delta_sleep(s):
     Parameters:
         s: seconds since elapsed to sleep until
     """
-    draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
     if int(time.time()) > initial_time + s:
         # check if the delta time has already passed
         return
     else:
         # find time needed to sleep to reach the specified param 's'
+        draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
         needed_sleep = (initial_time+s) - int(time.time())
         time.sleep(needed_sleep)
 
