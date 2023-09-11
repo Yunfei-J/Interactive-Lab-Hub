@@ -128,17 +128,17 @@ while True:
     elif current_year == 1983:
         disp.image(image,rotation)
         delta_sleep(5)
-        current_year -= 5
         disp.image(image0, rotation)
-        draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
-    elif current_year > year_bk_2 and current_year < year_bk_1:
-        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-        print(current_year)
-        disp.image(image0, rotation)
+        draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
         current_year -= 5
-    elif current_year == year_bk_2: 
-        disp.image(image,rotation)
-        delta_sleep(5)
+    # elif current_year > year_bk_2 and current_year < year_bk_1:
+    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+    #     print(current_year)
+    #     disp.image(image0, rotation)
+    #     current_year -= 5
+    # elif current_year == year_bk_2: 
+    #     disp.image(image,rotation)
+    #     delta_sleep(5)
         # current_year -= 10
         # disp.image(image0, rotation)
         # draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
