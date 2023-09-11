@@ -92,6 +92,7 @@ while True:
         draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
         time.sleep(10)
         current_year -= 10
+        disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
 
     # if current_year>1983:
