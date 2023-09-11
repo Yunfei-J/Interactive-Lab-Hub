@@ -81,7 +81,6 @@ while True:
     steps = [i for i in range(current_year, year_bk_1, 10)]
     for step in steps:
         draw.text((x, y), str(step), font=font, fill="#FFFFFF")
-    draw.text((x, y), str(step), font=font, fill="#FFFFFF")
     sleep(1)
     # Display image.
     disp.image(image, rotation)
