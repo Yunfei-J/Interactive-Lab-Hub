@@ -5,7 +5,6 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
-import adafruit_character_lcd.character_lcd_i2c as character_lcd
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -64,11 +63,10 @@ backlight.switch_to_output()
 backlight.value = True
 
 
-# current_year = 2023
-# year_bk_1 = 1983
-# steps = [i for i in range(current_year, year_bk_1, 10)]
-# for step in steps:
-#     draw.text((x, y), step, font=font, fill="#FFFFFF")
+current_year = 2023
+year_bk_1 = 1983
+steps = [i for i in range(current_year, year_bk_1, 10)]
+
 
 
 while True:
@@ -80,7 +78,8 @@ while True:
     y = top
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     draw.text((x, y), display_time, font=font, fill="#FFFFFF")
-    lcd.message = "Hello\nCircuitPython"
+    for step in steps:
+        draw.text((x, y), step, font=font, fill="#FFFFFF")
     sleep(1)
     # Display image.
     disp.image(image, rotation)
