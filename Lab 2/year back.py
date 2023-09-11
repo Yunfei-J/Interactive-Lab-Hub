@@ -82,7 +82,7 @@ while True:
     for step in steps:
         draw.text((x, y), str(step), font=font, fill="#FFFFFF")
         print(step)
-        disp.image(image, rotation)
+        draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
         time.sleep(1)
     sleep(1)
     # Display image.
