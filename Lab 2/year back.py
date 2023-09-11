@@ -66,7 +66,9 @@ backlight.value = True
 
 current_year = 2023
 year_bk_1 = 1983
-year_bk_2 = 1969
+year_bk_2 = 1973 
+year_bk_3 = 1943
+year_bk_3 = 1903
 
 image = Image.open("red.jpg")
 backlight = digitalio.DigitalInOut(board.D22)
@@ -104,12 +106,8 @@ def delta_sleep(s):
         return
     else:
         # find time needed to sleep to reach the specified param 's'
-        draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
         needed_sleep = (initial_time+s) - int(time.time())
         time.sleep(needed_sleep)
-
-def now_we_stop():
-            draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
 
 
 while True:
@@ -122,27 +120,29 @@ while True:
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
     
-    if current_year>1983:
+    if current_year > 1983:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image0, rotation)
         current_year -= 10
-    elif current_year==1983:
+    elif current_year == 1983:
         disp.image(image,rotation)
         delta_sleep(5)
         current_year -= 5
         disp.image(image0, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
-    elif current_year>year_bk_2 and current_year<year_bk_1:
+    elif current_year > year_bk_2 and current_year < year_bk_1:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image0, rotation)
         current_year -= 5
-    else: 
+    elif current_year == year_bk_2: 
+        disp.image(image,rotation)
         delta_sleep(5)
-        current_year -= 10
-        disp.image(image0, rotation)
-        draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+        # current_year -= 10
+        # disp.image(image0, rotation)
+        # draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+    
     
 
     
