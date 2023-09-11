@@ -83,6 +83,8 @@ def delta_sleep(s):
         needed_sleep = (initial_time+s) - int(time.time())
         time.sleep(needed_sleep)
 
+def now_we_stop():
+            draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
 
 
 while True:
@@ -99,17 +101,27 @@ while True:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image, rotation)
-        current_year -= 1
+        current_year -= 5
+    elif current_year==1983:
+        delta_sleep(5)
+        now_we_stop
+        current_year -= 5
+        disp.image(image, rotation)
+        draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+    elif current_year>year_bk_2 and current_year<year_bk_1:
+        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+        print(current_year)
+        disp.image(image, rotation)
+        current_year -= 5
     else: 
-        def now_we_stop():
-            draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
         delta_sleep(5)
         current_year -= 10
         disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+    
 
     
 
     # Display image.
     disp.image(image, rotation)
-    time.sleep(0.001)
+    time.sleep(0.05)
