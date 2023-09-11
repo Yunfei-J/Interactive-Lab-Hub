@@ -66,8 +66,12 @@ backlight.value = True
 current_year = 2023
 year_bk_1 = 1983
 
-
-
+# steps = [i for i in range(current_year, year_bk_1, -10)]
+# for step in steps:
+#         draw.text((x, y), str(step), font=font, fill="#FFFFFF")
+#         print(step)
+#         disp.image(image, rotation)
+#         time.sleep(1)
 
 while True:
     # Draw a black filled box to clear the image.
@@ -78,12 +82,15 @@ while True:
     y = top
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
-    steps = [i for i in range(current_year, year_bk_1, -10)]
-    for step in steps:
-        draw.text((x, y), str(step), font=font, fill="#FFFFFF")
-        print(step)
-        draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-        time.sleep(1)
+    
+    if current_year>1983:
+        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+        print(current_year)
+        disp.image(image, rotation)
+        current_year =+ 10
+    else: 
+        draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
+
     sleep(1)
     # Display image.
     disp.image(image, rotation)
