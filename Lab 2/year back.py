@@ -36,15 +36,15 @@ disp = st7789.ST7789(
 # Make sure to create image with mode 'RGB' for full color.
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
-image = Image.new("RGB", (width, height))
+image0 = Image.new("RGB", (width, height))
 rotation = 90
 
 # Get drawing object to draw on image.
-draw = ImageDraw.Draw(image)
+draw = ImageDraw.Draw(image0)
 
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-disp.image(image, rotation)
+disp.image(image0, rotation)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
 padding = -2
@@ -125,28 +125,28 @@ while True:
     if current_year>1983:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
-        disp.image(image, rotation)
+        disp.image(image0, rotation)
         current_year -= 5
     elif current_year==1983:
         disp.image(image)
         delta_sleep(5)
         current_year -= 5
-        disp.image(image, rotation)
+        disp.image(image0, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
     elif current_year>year_bk_2 and current_year<year_bk_1:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
-        disp.image(image, rotation)
+        disp.image(image0, rotation)
         current_year -= 5
     else: 
         delta_sleep(5)
         current_year -= 10
-        disp.image(image, rotation)
+        disp.image(image0, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
     
 
     
 
     # Display image.
-    disp.image(image, rotation)
+    disp.image(image0, rotation)
     time.sleep(0.05)
