@@ -65,7 +65,7 @@ backlight.value = True
 
 current_year = 2023
 year_bk_1 = 1983
-steps = [i for i in range(current_year, year_bk_1, 10)]
+
 
 
 
@@ -78,8 +78,10 @@ while True:
     y = top
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
+    steps = [i for i in range(current_year, year_bk_1, 10)]
     for step in steps:
-        draw.text((x, y), step, font=font, fill="#FFFFFF")
+        draw.text((x, y), str(step), font=font, fill="#FFFFFF")
+    draw.text((x, y), str(step), font=font, fill="#FFFFFF")
     sleep(1)
     # Display image.
     disp.image(image, rotation)
