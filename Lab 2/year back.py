@@ -67,12 +67,22 @@ backlight.value = True
 current_year = 2023
 year_bk_1 = 1983
 
-# steps = [i for i in range(current_year, year_bk_1, -10)]
-# for step in steps:
-#         draw.text((x, y), str(step), font=font, fill="#FFFFFF")
-#         print(step)
-#         disp.image(image, rotation)
-#         time.sleep(1)
+initial_time = int(time.time()) #frame of reference in seconds
+
+def delta_sleep(s):
+    """
+    Parameters:
+        s: seconds since elapsed to sleep until
+    """
+    if int(time.time()) > initial_time + s:
+        # check if the delta time has already passed
+        return
+    else:
+        # find time needed to sleep to reach the specified param 's'
+        needed_sleep = (initial_time+s) - int(time.time())
+        time.sleep(needed_sleep)
+
+
 
 while True:
     # Draw a black filled box to clear the image.
@@ -92,8 +102,7 @@ while True:
     else: 
         def now_we_stop():
             draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
-        tk.update()
-        time.sleep(5)
+        delta_sleep(5)
         current_year -= 10
         disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
