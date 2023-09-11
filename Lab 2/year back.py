@@ -79,7 +79,7 @@ while True:
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
     steps = [i for i in range(current_year, year_bk_1, 10)]
-    print(step)
+    print('step')
     for step in steps:
         draw.text((x, y), str(step), font=font, fill="#FFFFFF")
         print(step)
