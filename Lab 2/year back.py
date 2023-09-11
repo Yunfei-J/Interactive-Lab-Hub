@@ -86,9 +86,9 @@ else:
 image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
 # Crop and center the image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image = image.crop((x, y, x + width, y + height))
+a = scaled_width // 2 - width // 2
+b = scaled_height // 2 - height // 2
+image = image.crop((a, b, a + width, b + height))
 
 
 
