@@ -104,7 +104,7 @@ while True:
         current_year -= 5
     elif current_year==1983:
         delta_sleep(5)
-        now_we_stop
+        now_we_stop()
         current_year -= 5
         disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
