@@ -91,7 +91,6 @@ while True:
     else: 
         draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
 
-    sleep(1)
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
