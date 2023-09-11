@@ -93,6 +93,7 @@ while True:
         def now_we_stop():
             draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
         tk.update()
+        time.sleep(5)
         current_year -= 10
         disp.image(image, rotation)
         draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
