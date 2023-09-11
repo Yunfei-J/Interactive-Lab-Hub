@@ -77,7 +77,7 @@ while True:
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
     y = top
     display_time = strftime("%m/%d/%Y %H:%M:%S")
-    draw.text((x, y), display_time, font=font, fill="#FFFFFF")
+    # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
     for step in steps:
         draw.text((x, y), step, font=font, fill="#FFFFFF")
     sleep(1)
