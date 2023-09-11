@@ -87,7 +87,7 @@ while True:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image, rotation)
-        current_year =+ 10
+        current_year -= 10
     else: 
         draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
 
