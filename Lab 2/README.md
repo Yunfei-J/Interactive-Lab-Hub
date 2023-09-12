@@ -196,6 +196,8 @@ Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
+![piClock](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/477e7e2c-ce97-4525-aa9d-121a6da40791)
+
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
