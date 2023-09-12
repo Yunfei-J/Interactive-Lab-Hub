@@ -232,7 +232,7 @@ def Internet():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("dns.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("internet")
 
@@ -258,7 +258,7 @@ def Moon():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("moon.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("moon")
 
@@ -284,7 +284,7 @@ def WWII():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("ww2.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("wwii")
 
@@ -315,7 +315,7 @@ def Wright():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("wright.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("wright")
     print("past finished")
@@ -394,7 +394,7 @@ def Maldives():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("maldives.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("Maldives")
 
@@ -420,7 +420,7 @@ def Flight():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("flight.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("flight")
 
@@ -446,7 +446,7 @@ def Mars():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("mars.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("Mars")
 
@@ -476,7 +476,7 @@ def Cyborg():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("cyborg.png"), rotation)
-    delta_sleep(1)
+    delta_sleep(3)
 
     print("cyborg")
     print("future finished")
