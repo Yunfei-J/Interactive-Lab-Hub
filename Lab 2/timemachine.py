@@ -395,6 +395,7 @@ def Maldives():
 
     disp.image(editImage("maldives.png"), rotation)
     delta_sleep(3)
+    disp.image(image, rotation)
 
     print("Maldives")
 
@@ -477,6 +478,7 @@ def Cyborg():
 
     disp.image(editImage("cyborg.png"), rotation)
     delta_sleep(3)
+    disp.image(image, rotation)
 
     print("cyborg")
     print("future finished")
