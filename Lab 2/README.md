@@ -225,11 +225,9 @@ After that, Git will ask you to login to your GitHub account to push the updates
   Move stick backward: move back in time, i.e. to the past <br /> 
   Move stick left/right: view more details of the major event around the time you stopped at <br />
 
-![P2_sketch](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/9c7d8567-812d-4e99-b6ec-b1601b8c8dc5)
-
-
+![joystick](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/353b9da0-1981-467b-aaec-1e46b7e7bb3d)
   
-3. While the user time travels, the green LED will be on. <br /> 
+2. While the user time travels, the green LED will be on. <br /> 
   While the user stops, the red LED will turn on.
 
 
