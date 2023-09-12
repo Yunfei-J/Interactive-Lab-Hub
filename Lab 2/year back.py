@@ -123,6 +123,7 @@ while True:
     for i in range(2023, 1983, -10):
         draw.text((x, y), str(i), font=font, fill="#FFFFFF")
         print(current_year)
+        draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
         disp.image(image0, rotation)
   
     
