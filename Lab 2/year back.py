@@ -66,6 +66,7 @@ backlight.value = True
 
 current_year = 2023
 year_bk_1 = 1983
+# 1983,1969,1939,1903
 year_bk_2 = 1973 
 year_bk_3 = 1943
 year_bk_3 = 1903
@@ -131,12 +132,12 @@ while True:
         disp.image(image0, rotation)
         draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
         current_year -= 5
-    elif current_year > year_bk_2 and current_year < year_bk_1:
+    elif current_year > 1973 and current_year <1983:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image0, rotation)
         current_year -= 5
-    elif current_year == year_bk_2: 
+    elif current_year == 1973: 
         disp.image(image,rotation)
         delta_sleep(5)
         # current_year -= 10
