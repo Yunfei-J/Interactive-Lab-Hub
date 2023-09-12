@@ -186,9 +186,9 @@ def JiaoPast():
         disp.image(image, rotation)
         current_year -= 10
     elif current_year == 1983:
-        delta_sleep(5)
+        delta_sleep(10)
         disp.image(image, rotation)
-        draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
+        # draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
     
     global event_num
     if current_year == 1983:
@@ -232,7 +232,7 @@ def Internet():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("dns.png"), rotation)
-    delta_sleep(3)
+    delta_sleep(5)
 
     print("internet")
 
@@ -258,7 +258,7 @@ def Moon():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("moon.png"), rotation)
-    delta_sleep(3)
+    delta_sleep(8)
 
     print("moon")
 
