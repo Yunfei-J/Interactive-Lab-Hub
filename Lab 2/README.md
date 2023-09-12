@@ -223,9 +223,12 @@ After that, Git will ask you to login to your GitHub account to push the updates
 1. Using joystick to change your (user's) position on the timeline.<br /> 
   Move stick forward: proceed in time, i.e. to the future <br /> 
   Move stick backward: move back in time, i.e. to the past <br /> 
-  Move stick left/right: view more details of the major event around the time you stopped at <br /> 
+  Move stick left/right: view more details of the major event around the time you stopped at <br />
+
+![P2_sketch](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/453814fb-a360-45ce-9af5-097ec66930d7)
+
   
-2. While the user time travels, the green LED will be on. <br /> 
+3. While the user time travels, the green LED will be on. <br /> 
   While the user stops, the red LED will turn on.
 
 
