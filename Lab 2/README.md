@@ -1,5 +1,7 @@
 # Interactive Prototyping: The Clock of Pi
-**NAMES OF COLLABORATORS HERE**
+**NAMES OF COLLABORATORS:**
+<br /> 
+**Jamie Wang, Yiming Sheng, Yunfei Jiao**
 
 Does it feel like time is moving strangely during this semester?
 
@@ -201,6 +203,8 @@ Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
+[https://github.com/Yunfei-J/Interactive-Lab-Hub/blob/Fall2023/Lab%202/timemachine.py]
+
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
 ```
@@ -215,7 +219,11 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
 
-\*\*\***Take a video of your PiClock.**\*\*\*
+\*\*\***Take a video of your PiClock.**\*\*\* 
+<br /> 
+
+[https://drive.google.com/file/d/1IubblKcMstaUsifW58l3HJDnBdeZOazq/view?usp=drivesdk]
+
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
