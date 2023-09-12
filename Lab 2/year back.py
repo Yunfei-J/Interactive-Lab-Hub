@@ -138,7 +138,7 @@ while True:
         disp.image(image0, rotation)
         current_year -= 5
     elif current_year == 1973: 
-        disp.image(image,rotation)
+        # disp.image(image,rotation)
         delta_sleep(5)
         # current_year -= 10
         # disp.image(image0, rotation)
