@@ -218,13 +218,12 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
-1. Using joystick to change your (user's) position on the timeline.
-
-  Move stick forward: proceed in time, i.e. to the future 
-  Move stick backward: move back in time, i.e. to the past 
-  Move stick left/right: view more details of the major event around the time you stopped at 
+1. Using joystick to change your (user's) position on the timeline.<br /> 
+  Move stick forward: proceed in time, i.e. to the future <br /> 
+  Move stick backward: move back in time, i.e. to the past <br /> 
+  Move stick left/right: view more details of the major event around the time you stopped at <br /> 
   
-2. While the user time travels, the green LED will be on. 
+2. While the user time travels, the green LED will be on. <br /> 
   While the user stops, the red LED will turn on.
 
 
