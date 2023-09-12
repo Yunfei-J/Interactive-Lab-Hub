@@ -5,7 +5,6 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
-import tkinter as tk
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -121,31 +120,35 @@ while True:
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
     
-    if current_year > 1983:
-        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+    for i in range(2023, 1983, -10):
+        draw.text((x, y), str(i), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image0, rotation)
-        current_year -= 10
-    elif current_year == 1983:
-        disp.image(image,rotation)
-        delta_sleep(5)
-        disp.image(image0, rotation)
-        draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
-        current_year -= 5
-    elif current_year > 1973 and current_year <1983:
-        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-        print(current_year)
-        disp.image(image0, rotation)
-        current_year -= 5
-    elif current_year == 1973: 
-        # disp.image(image,rotation)
-        delta_sleep(5)
-        # current_year -= 10
-        # disp.image(image0, rotation)
-        # draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+  
     
+    # if current_year > 1983:
+    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+    #     print(current_year)
+    #     disp.image(image0, rotation)
+    #     current_year -= 10
+    # elif current_year == 1983:
+    #     disp.image(image,rotation)
+    #     delta_sleep(5)
+    #     disp.image(image0, rotation)
+    #     draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
+    #     current_year -= 5
+    # elif current_year > 1973 and current_year <1983:
+    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+    #     print(current_year)
+    #     disp.image(image0, rotation)
+    #     current_year -= 5
+    # elif current_year == 1973: 
+    #     # disp.image(image,rotation)
+    #     delta_sleep(5)
+    #     # current_year -= 10
+    #     # disp.image(image0, rotation)
+    #     # draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
     
-
     
 
     # Display image.
