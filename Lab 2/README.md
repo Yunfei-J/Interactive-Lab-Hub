@@ -1,5 +1,7 @@
 # Interactive Prototyping: The Clock of Pi
-**NAMES OF COLLABORATORS HERE**
+**NAMES OF COLLABORATORS:**
+<br /> 
+**Jamie Wang, Yiming Sheng, Yunfei Jiao**
 
 Does it feel like time is moving strangely during this semester?
 
