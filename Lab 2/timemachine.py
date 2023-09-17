@@ -231,7 +231,8 @@ def Internet():
     display_title = "Advent of DNS"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("dns.png"), rotation)
+    image.paste(editImage("dns.png"), (0,0))
+    # disp.image(editImage("dns.png"), rotation)
     delta_sleep(5)
 
     print("internet")
@@ -257,7 +258,8 @@ def Moon():
     display_title = "Land on Moon"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("moon.png"), rotation)
+    image.paste(editImage("moon.png"), (0,0))
+    # disp.image(editImage("moon.png"), rotation)
     delta_sleep(8)
 
     print("moon")
@@ -282,8 +284,9 @@ def WWII():
     y3 = 0.4*height
     display_title = "Beginning of WWII"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
-
-    disp.image(editImage("ww2.png"), rotation)
+    
+    image.paste(editImage("ww2.png"), (0,0))
+    # disp.image(editImage("ww2.png"), rotation)
     delta_sleep(3)
 
     print("wwii")
