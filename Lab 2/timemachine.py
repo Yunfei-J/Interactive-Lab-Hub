@@ -211,6 +211,7 @@ def PastCarousel():
 
 
 def Internet():
+    image.paste(editImage("dns.png"), (0,0))
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -231,7 +232,7 @@ def Internet():
     display_title = "Advent of DNS"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    image.paste(editImage("dns.png"), (0,0))
+    
     # disp.image(editImage("dns.png"), rotation)
     delta_sleep(5)
 
