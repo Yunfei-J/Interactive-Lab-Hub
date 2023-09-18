@@ -191,7 +191,7 @@ def main_screen():
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
 start_year = 2023
-current_year = None
+current_year = 2023
 pictures = {1983: 'dns.jpg', 1963: 'ww2.jpg',1903:'wright.jpg'}
 
 
@@ -441,7 +441,7 @@ while True:
     x = 0.4*width
     y = 0.46*height
     
-    current_year= start_year
+    
     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
     print(current_year,"While true")
     current_year -= 10
