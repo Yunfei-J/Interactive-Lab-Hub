@@ -192,8 +192,7 @@ def main_screen():
 
 start_year = 2023
 current_year
-pictures = {1983: 'dns.jpg', 1969: 'ww2.jpg',1903:'wright.jpg'}
-filename = pictures['mary']
+pictures = {1983: 'dns.jpg', 1963: 'ww2.jpg',1903:'wright.jpg'}
 
 
 def JiaoPast():
@@ -208,22 +207,23 @@ def JiaoPast():
     current_year= start_year
     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
     print(current_year)
-    disp.image(pictures[current_year], rotation)
     current_year -= 10
+    if x==0:
+        disp.image(pictures[current_year], rotation)
 
-    if current_year > 1983:
-        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-        print(current_year)
-        disp.image(image, rotation)
-        current_year -= 10
-    elif current_year == 1983:
-        delta_sleep(10)
-        disp.image(image, rotation)
-        # draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
+    # if current_year > 1983:
+    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+    #     print(current_year)
+    #     disp.image(image, rotation)
+    #     current_year -= 10
+    # elif current_year == 1983:
+    #     delta_sleep(10)
+    #     disp.image(image, rotation)
+    #     # draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
     
-    global event_num
-    if current_year == 1983:
-        event_num += 1
+    # global event_num
+    # if current_year == 1983:
+    #     event_num += 1
 
 def PastCarousel():
     global state
@@ -528,6 +528,9 @@ def ToFutureTest():
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=400)
+
+    
+
 
     if state == 0:
         main_screen()
