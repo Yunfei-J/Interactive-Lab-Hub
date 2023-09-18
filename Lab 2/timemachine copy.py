@@ -441,7 +441,6 @@ while True:
     x = 0.4*width
     y = 0.46*height
     
-    global current_year 
     current_year= start_year
     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
     print(current_year)
