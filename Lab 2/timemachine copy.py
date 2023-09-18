@@ -447,7 +447,7 @@ while True:
     current_year -= 10
     print(current_year,"While true")
     # if x==0:
-    disp.image(pictures[current_year], rotation)
+    disp.image(editImage(pictures[current_year]), rotation)
 
 
     # Display image.
