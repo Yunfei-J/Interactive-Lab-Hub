@@ -443,8 +443,9 @@ while True:
     
     current_year= start_year
     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-    print(current_year)
+    print(current_year,"While true")
     current_year -= 10
+    print(current_year,"While true")
     if x==0:
         disp.image(pictures[current_year], rotation)
 
