@@ -441,7 +441,7 @@ while True:
     x = 0.4*width
     y = 0.46*height
     
-    
+    image.paste(editImage(pictures[current_year]), (0,0))
     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
     print(current_year,"While true")
     current_year -= 10
@@ -449,6 +449,32 @@ while True:
     # if x==0:
     disp.image(editImage(pictures[current_year]), rotation)
 
+
+
+    # image.paste(editImage("dns.png"), (0,0))
+    # time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+
+    # x1 = 0.3*width
+    # y1 = 0.05*height
+
+    # display_date = "01/01/1983"
+
+    # draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
+
+    # text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    # x6 = 0.1*width
+    # y6 = 0.80*height
+    # display_option2 = "> Continue"
+    # draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    # x3 = 0.27*width
+    # y3 = 0.4*height
+    # display_title = "Advent of DNS"
+    # draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    
+    # disp.image(editImage("dns.png"), rotation)
+    delta_sleep(5)
 
     # Display image.
     disp.image(image, rotation)
