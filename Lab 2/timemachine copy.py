@@ -191,7 +191,7 @@ def main_screen():
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
 start_year = 2023
-current_year
+current_year = 2023
 pictures = {1983: 'dns.jpg', 1963: 'ww2.jpg',1903:'wright.jpg'}
 
 
