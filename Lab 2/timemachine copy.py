@@ -192,7 +192,7 @@ def main_screen():
 
 start_year = 2023
 current_year = 2023
-pictures = {2023: "dns.jpg",2013: "dns.jpg", 2003: "ww2.jpg",1993:"wright.jpg"}
+pictures = {2023: "dns.png",2013: "dns.png", 2003: "ww2.png",1993:"wright.png"}
 
 
 # def JiaoPast():
