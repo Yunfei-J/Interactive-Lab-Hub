@@ -176,27 +176,6 @@ def main_screen():
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
 
-# def Jiao():
-#     print("Jiao")
-#     global Jiao_run
-#     Jiao_run = True
-
-#     x = 0.4*width
-#     y = 0.46*height
-    
-#     if current_year > 1983:
-#         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-#         print(current_year)
-#         disp.image(image, rotation)
-#         current_year -= 10
-#     elif current_year == 1983:
-#         delta_sleep(5)
-#         disp.image(image, rotation)
-#         draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
-    
-#     global event_num
-#     if event_num == 0:
-#         event_num += 1
 
 def JiaoPast():
     print("Jiao")
@@ -545,17 +524,21 @@ while True:
     x = myJoystick.horizontal
     y = myJoystick.vertical
     b = myJoystick.button
+    # Set the limits of time travel
     if current_year <= 1903:
         current_year = 1903
     if current_year >= 2093:
         current_year = 2093
+    
+    # Actions under each joystick direction
+    # L-Left, R-Right, U-Up, D-Down
     if x > 575:
          state = 1
-         print("L", state)
+         print("L", state) 
          timeTravel = False
     elif x < 450:
          state = 1
-         print("R", state)
+         print("R", state) 
          timeTravel = False
     if y > 575:
          state = 1
