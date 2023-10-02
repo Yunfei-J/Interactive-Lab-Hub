@@ -183,6 +183,9 @@ Better speech recognition, more comprehensive functionality.
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
 The device gives a brief walkthrough of how the program can be interacted with. It explains what each commands it supports can do. 
 3. Make a new storyboard, diagram and/or script based on these reflections.
+![commands](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/73d85462-4643-4574-badb-436e0023d8b3)
+
+![storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/765975a0-c00d-4a8f-bec1-8b78ee448547)
 
 
 ## Prototype your system
