@@ -178,10 +178,15 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 
 ## Prep for Part 2
 
-1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+1. What are concrete things that could use improvement in the design of your device?
+
+For example: wording, timing, anticipation of misunderstandings...
+
 Better speech recognition, more comprehensive functionality.
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+
 The device gives a brief walkthrough of how the program can be interacted with. It explains what each commands it supports can do. 
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
 ![Storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/2d385d91-3533-48d3-80aa-241a2303bdbb)
@@ -237,4 +242,5 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 A button or any haptic sensor could be used for signaling when and when not to take the user's voice as input.
