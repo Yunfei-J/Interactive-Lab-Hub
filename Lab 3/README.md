@@ -178,13 +178,12 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 
 ## Prep for Part 2
 
-1. What are concrete things that could use improvement in the design of your device?
+1. What are concrete things that could use improvement in the design of your device?<br>
 
 For example: wording, timing, anticipation of misunderstandings...
-
 Better speech recognition, more comprehensive functionality.
-2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
 
+2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?<br>
 The device gives a brief walkthrough of how the program can be interacted with. It explains what each commands it supports can do. 
 
 3. Make a new storyboard, diagram and/or script based on these reflections.
@@ -218,6 +217,8 @@ Delete the "Activate" and "Continue" features
 Using a sentence as a command argument sometimes yields higher recognition accuracy because the voice-to-text system can make sense of it more than a single word. 
 
 *Include videos or screencaptures of both the system and the controller.*
+[![Ghost Writer Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/Screen%20Shot%202023-10-02%20at%2012.12.42%20AM.png)](https://drive.google.com/file/d/1JAwP47VQ_4JaSbzOmN7hVksMjzpjYVJa/view?usp=drive_link)
+
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
