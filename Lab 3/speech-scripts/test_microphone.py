@@ -13,6 +13,12 @@ from vosk import Model, KaldiRecognizer
 
 q = queue.Queue()
 nl = []
+content = []
+status = None
+rewriteBegin = False
+newSentence = None
+replaceidx = 0
+# lastIndex = len(nl)-1
 
 def int_or_str(text):
     """Helper function for argument parsing."""
@@ -27,6 +33,47 @@ def callback(indata, frames, time, status):
         print(status, file=sys.stderr)
     q.put(bytes(indata))
 
+def sentence_to_words(newSentence):
+    newSentence = newSentence[14:-3]
+    words = newSentence.split()
+    global rewriteBegin
+    global replaceidx
+    # global lastIndex
+    # lastIndex = len(content)-1
+    if "delete" in newSentence:
+        # content.remove(lastIndex)
+        content.pop()
+        return
+    # if words == ["pie","delete"] and lastIndex > 0:
+    #     content.remove(lastIndex)
+    if "fuck" in newSentence:
+        lllist = content[-1].split()
+        lllist = lllist[:-1]
+        print (lllist)
+        content[-1] = " ".join([str(item) for item in lllist])
+        print("content",content)
+        return
+    if "rewrite" in newSentence:
+        # status = "rewrite"
+        rewriteBegin = True
+        try:
+            replaceidx = int(help_dict[words[-1]])-1
+        except:
+            print("error listening")
+        print(replaceidx)
+        # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
+        content.pop(replaceidx)
+        return
+    # if status == "rewrite":
+    if rewriteBegin == True:
+        content.insert(replaceidx, newSentence)
+        # status = None
+        rewriteBegin = False
+    else:
+        content.append(newSentence)
+        replaceidx = 0
+    # if status == continue
+
 help_dict = {
     'one': '1',
     'two': '2',
@@ -37,8 +84,17 @@ help_dict = {
     'seven': '7',
     'eight': '8',
     'nine': '9',
-    'zero': '0'
+    'zero': '0',
+    'ten': '10',
+    'eleven': '11',
+    'twelve': '12'
 }
+
+# def ghost_analyze():
+    
+def output_content(c):
+    output_text = " ".join(c)
+    return output_text
 
 def string_to_int(newlist):
     
@@ -98,18 +154,18 @@ try:
     with sd.RawInputStream(samplerate=args.samplerate, blocksize = 8000, device=args.device,
             dtype="int16", channels=1, callback=callback):
         print("#" * 80)
-        print("Press Ctrl+C to stop the recording")
+        print("Start writing by saying 'PI WRITE' + your content; Say 'PI BACKSPACE' to delete the last element; Say 'PI DELETE SENTENCE' to delete the last sentence; Say 'PI REWRITE SENTENCE' + [number] to rewrite sentence [number]")
         print("#" * 80)
 
         rec = KaldiRecognizer(model, args.samplerate)
         while True:
             data = q.get()
+            # replaceidx = 0
             if rec.AcceptWaveform(data):
-                nl.append(rec.Result())
-                print(nl)
-
-                print(rec.Result())
-                # nl.append(rec.Result())
+                newSentence = rec.Result()
+                print(newSentence)
+                # content.append(newSentence[14:-3])
+                sentence_to_words(newSentence)
             else:
                 print(rec.PartialResult())
             if dump_fn is not None:
@@ -119,8 +175,10 @@ try:
 except KeyboardInterrupt:
     # string_to_int()
     print("\n")
-    print(nl)
-    string_to_int(nl)
+    # print(nl)
+    # string_to_int(nl)
+    # print(content)
+    print(output_content(content))
     print("\nDone")
     parser.exit(0)
 except Exception as e:
