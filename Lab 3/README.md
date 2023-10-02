@@ -179,8 +179,11 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+Better speech recognition, more comprehensive functionality.
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+The device gives a brief walkthrough of how the program can be interacted with. It explains what each commands it supports can do. 
 3. Make a new storyboard, diagram and/or script based on these reflections.
+
 
 ## Prototype your system
 
@@ -190,6 +193,19 @@ The system should:
 * require participants to speak to it. 
 
 *Document how the system works*
+Our device “ghostwriter” allows users to write paragraphs with just speech input. It could convert the user’s speech to text and recognize user’s commands regarding how to edit the recorded text. 
+Here are the updated commands that the user can interact with ghostwriter:
+Back - Delete the last word from the last sentence
+Delete - Delete the last sentence
+Delete <i> - Delete the sentence with index i
+Rewrite <i> - Replace sentence <i> with the next detected sentence
+Show me everything - Print everything ghostwriter has recorded
+If not detecting any argument, Ghostwriter writes whatever the user speaks into the text document.
+
+The improvements we've made based on feedback:
+Delete the "pi"s in the commands to reduce recognition error.
+Delete the "Activate" and "Continue" features
+Using a sentence as a command argument sometimes yields higher recognition accuracy because the voice-to-text system can make sense of it more than a single word. 
 
 *Include videos or screencaptures of both the system and the controller.*
 
@@ -199,18 +215,21 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+\*\**The ghostwriter has a good coverage of functions meeting the basic need for typing and editing texts with voice input.
+    It still lacks flexibility and doesn't have a good UI because it's run in the terminal.
+  *\*\*
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+\*\** The accuracy of speech recognition is really low even if the users pronounce the words clearly. It would thus be very frustrating to match every single word to the user's expectation. *\*\*
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
 \*\**your answer here*\*\*
-
+1. The user may not feel relaxed when they have to remain silent when they don't want the system to write down anything.
+2. Showing the index of each sentence at the beginning of them could help the user to use the commands that target at a specific sentence without having to count the position of the target sentence.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
-
+A button or any haptic sensor could be used for signaling when and when not to take the user's voice as input.
