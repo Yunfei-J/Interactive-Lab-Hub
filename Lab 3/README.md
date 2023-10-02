@@ -184,7 +184,7 @@ Better speech recognition, more comprehensive functionality.
 The device gives a brief walkthrough of how the program can be interacted with. It explains what each commands it supports can do. 
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
-![storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/1484b18d-396e-4c6d-bd6e-1c0d06ac4796)
+![storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/93545021-f3a3-4ef5-8edb-b747127bfcbf)
 
 ![commands](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/73d85462-4643-4574-badb-436e0023d8b3)
 
