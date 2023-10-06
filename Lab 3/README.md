@@ -1,5 +1,5 @@
 # Chatterboxes
-**NAMES OF COLLABORATORS HERE**
+**Jamie Wang, Yunfei Jiao**
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://www.youtube.com/embed/Q8FWzLMobx0?start=19)
 
 In this lab, we want you to design interaction with a speech-enabled device--something that listens and talks to you. This device can do anything *but* control lights (since we already did that in Lab 1).  First, we want you first to storyboard what you imagine the conversational interaction to be like. Then, you will use wizarding techniques to elicit examples of what people might say, ask, or respond.  We then want you to use the examples collected from at least two other people to inform the redesign of the device.
@@ -69,6 +69,8 @@ You can also play audio files directly with `aplay filename`. Try typing `aplay 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
 
+See [saymyname.sh](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/speech-scripts/saymyname.sh)
+
 ---
 Bonus:
 [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi which can be installed easily through python with:
@@ -110,6 +112,9 @@ python test_microphone.py -m en
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
 
+See [asknmber.sh](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/speech-scripts/asknumber.sh)
+See [changes made in test_microphone.py](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/speech-scripts/test_microphone.py)
+
 
 ### Serving Pages
 
@@ -135,7 +140,18 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+![ghost-writer](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/ce14de03-75cb-4843-af7e-52b82a99a241)
+
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
+
+Our device “ghostwriter” allows users to write paragraphs with just speech input. It could convert the user’s speech to text and recognize user’s commands regarding how to edit the recorded text. 
+Ghostwriter provides the following arguments:
+PI Write - Activate the ghostwriter
+PI Backspace - Delete the last digit
+PI Delete Sentence - Delete the last sentence
+PI Rewrite Sentence [number] - Replace sentence [number] with the next detected sentence
+PI Continue - Continue from the end of last sentence
+If not detecting any argument, Ghostwriter writes whatever the user speaks into the text document.
 
 \*\***Please describe and document your process.**\*\*
 
@@ -144,6 +160,12 @@ Write out what you imagine the dialogue to be. Use cards, post-its, or whatever 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+
+[![Ghost Writer Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/12070eeba135b1a959b313894b3e0e01c8aad311/Lab%203/Screen%20Shot%202023-09-25%20at%209.11.58%20PM.png)](https://drive.google.com/file/d/11blehYVYfhxLKzXz3orZX7QOAvMtI3zH/view?usp=drive_link)
+
+There are some unnatural interactions that users might need time to get used to. E.g. Saying aloud “Rewrite Sentence [number]” directly followed by the new sentence feels weird. It may be more natural to change the argument to “Rewrite Sentence [number] TO”.
+But overall, the dialogue and the logic of Ghostwriter are working quite well.
+
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
@@ -156,9 +178,21 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 
 ## Prep for Part 2
 
-1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
-2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+1. What are concrete things that could use improvement in the design of your device?<br>
+
+For example: wording, timing, anticipation of misunderstandings...
+Better speech recognition, more comprehensive functionality.
+
+2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?<br>
+The device gives a brief walkthrough of how the program can be interacted with. It explains what each commands it supports can do. 
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
+
+![Storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/2d385d91-3533-48d3-80aa-241a2303bdbb)
+
+![commands](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/73d85462-4643-4574-badb-436e0023d8b3)
+
+
 
 ## Prototype your system
 
@@ -168,8 +202,23 @@ The system should:
 * require participants to speak to it. 
 
 *Document how the system works*
+Our device “ghostwriter” allows users to write paragraphs with just speech input. It could convert the user’s speech to text and recognize user’s commands regarding how to edit the recorded text. 
+Here are the updated commands that the user can interact with ghostwriter:
+Back - Delete the last word from the last sentence
+Delete - Delete the last sentence
+Delete <i> - Delete the sentence with index i
+Rewrite <i> - Replace sentence <i> with the next detected sentence
+Show me everything - Print everything ghostwriter has recorded
+If not detecting any argument, Ghostwriter writes whatever the user speaks into the text document.
+
+The improvements we've made based on feedback:
+Delete the "pi"s in the commands to reduce recognition error.
+Delete the "Activate" and "Continue" features
+Using a sentence as a command argument sometimes yields higher recognition accuracy because the voice-to-text system can make sense of it more than a single word. 
 
 *Include videos or screencaptures of both the system and the controller.*
+[![Ghost Writer Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/Screen%20Shot%202023-10-02%20at%2012.12.42%20AM.png)](https://drive.google.com/file/d/1JAwP47VQ_4JaSbzOmN7hVksMjzpjYVJa/view?usp=drive_link)
+
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
@@ -177,18 +226,22 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+\*\**The ghostwriter has a good coverage of functions meeting the basic need for typing and editing texts with voice input.
+    It still lacks flexibility and doesn't have a good UI because it's run in the terminal.
+  *\*\*
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+\*\** The accuracy of speech recognition is really low even if the users pronounce the words clearly. It would thus be very frustrating to match every single word to the user's expectation. *\*\*
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
 \*\**your answer here*\*\*
-
+1. The user may not feel relaxed when they have to remain silent when they don't want the system to write down anything.
+2. Showing the index of each sentence at the beginning of them could help the user to use the commands that target at a specific sentence without having to count the position of the target sentence.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
 
+A button or any haptic sensor could be used for signaling when and when not to take the user's voice as input.

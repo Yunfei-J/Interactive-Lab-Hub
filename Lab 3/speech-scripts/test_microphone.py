@@ -12,6 +12,7 @@ import sounddevice as sd
 from vosk import Model, KaldiRecognizer
 
 q = queue.Queue()
+nl = []
 
 def int_or_str(text):
     """Helper function for argument parsing."""
@@ -25,6 +26,34 @@ def callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
     q.put(bytes(indata))
+
+help_dict = {
+    'one': '1',
+    'two': '2',
+    'three': '3',
+    'four': '4',
+    'five': '5',
+    'six': '6',
+    'seven': '7',
+    'eight': '8',
+    'nine': '9',
+    'zero': '0'
+}
+
+def string_to_int(newlist):
+    
+    # content = newlist[0][14:len(newlist[0])-3]
+    # content.split()
+    try:
+        content = newlist[0][14:len(newlist[0])-3]
+        res = ''.join(help_dict[ele] for ele in content.split())
+        print("your number is")
+        print(res)
+    except:
+        print("You didn't give me the correct response")
+    # print("your number is")
+    # print(res)
+
 
 parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument(
@@ -76,13 +105,22 @@ try:
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
+                nl.append(rec.Result())
+                print(nl)
+
                 print(rec.Result())
+                # nl.append(rec.Result())
             else:
                 print(rec.PartialResult())
             if dump_fn is not None:
                 dump_fn.write(data)
+                
 
 except KeyboardInterrupt:
+    # string_to_int()
+    print("\n")
+    print(nl)
+    string_to_int(nl)
     print("\nDone")
     parser.exit(0)
 except Exception as e:
