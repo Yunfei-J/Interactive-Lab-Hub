@@ -182,7 +182,32 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
+1. Install distance detectors along the sides of street curbs to sense passing vehicles. Each time a vehicle passes by, the detector will emit a signal.
+   
+2. Employ a pair of rotary encoders to replicate the functionality of a radio's dial buttons. The encoders detect angular positions, allowing for precise adjustments of both volume and frequency settings to the desired numerical values.
+
+3. Utilize capacitive sensors affixed to the rims of water cups to register touches from a metal mallet. Each strike on a distinct water cup generates a unique pitch. These signals from various cups can be captured and translated into musical notes on a digital score, offering a novel way to create music through tactile interaction with everyday objects.
+
+4. Use distance detectors for detecting the proximity of a person to the shower head. When the person is detected approaching the shower head, the shower head will be automatically activated. Conversely, when the person moves away, the system will promptly deactivate the shower head, conserving water and energy.
+
+5. Adding distance detectors inside trash cans to monitor trash bag fullness. These detectors measure the distance between the top of the trash and the top of the bag.
+
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+
+1. Place distance detectors on the side of street curbs to detect cars passing by. Whenever a car passes by, a signal will be sent from the detector.
+  -Questions
+   -How accurately can the sensor detect the car's presence and distance?
+   -Could the system distract drivers or disrupt traffic flow?
+  -What to physically prototype
+   -Need to simulate the system and test its accuracy in detecting passing cars under various conditions and conduct safety assessments and consider how to minimize distractions or potential hazards.
+1. Using two rotary encoders to simulate a radio’s dial buttons.The angular positions are detected to change the volume and frequency to the right number. 
+  -Questions
+   -What is the range and sensitivity of the volume control?
+   -How can we ensure accurate and reliable gesture recognition?
+   -Any feedback mechanisms (e.g., LED indicators, audio cues) to confirm user actions?
+  -What to physically prototype
+   -Need to set up rotary actuators and create a mechanism to control the radio's volume using these actuators. Create a user-friendly interface and feedback system that allows users to interact with the radio easily and understand the status of volume and channel selection.
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
 
