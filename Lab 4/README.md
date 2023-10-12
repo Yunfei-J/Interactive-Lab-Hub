@@ -183,14 +183,21 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
 1. Install distance detectors along the sides of street curbs to sense passing vehicles. Each time a vehicle passes by, the detector will emit a signal.
+   ![WechatIMG3257](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/8f2969e8-9d39-4c3f-aaa9-9db0123d6299)
+
    
 2. Employ a pair of rotary encoders to replicate the functionality of a radio's dial buttons. The encoders detect angular positions, allowing for precise adjustments of both volume and frequency settings to the desired numerical values.
+   ![WechatIMG3258](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/5c213b71-7eaf-493a-8529-b8a657e1c55e)
 
-3. Utilize capacitive sensors affixed to the rims of water cups to register touches from a metal mallet. Each strike on a distinct water cup generates a unique pitch. These signals from various cups can be captured and translated into musical notes on a digital score, offering a novel way to create music through tactile interaction with everyday objects.
+
+3. Utilize capacitive sensors affixed to the rims of snack bags to register touches with hands. These signals will be accumulated daily, displayed on the pi monitor to alert the user how many times they were eating snacks on that day.
+<img width="846" alt="Screen Shot 2023-10-11 at 10 57 04 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/29d69ac7-d0b0-4b52-9ec9-523b20ca7231">
 
 4. Use distance detectors for detecting the proximity of a person to the shower head. When the person is detected approaching the shower head, the shower head will be automatically activated. Conversely, when the person moves away, the system will promptly deactivate the shower head, conserving water and energy.
+![WechatIMG3260](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/80919942-6cef-4260-98da-d18d1d80950d)
 
 5. Adding distance detectors inside trash cans to monitor trash bag fullness. These detectors measure the distance between the top of the trash and the top of the bag.
+![WechatIMG3261](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/25aee456-6e3f-4c84-b4d8-aebdd2a3ad59)
 
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
@@ -199,7 +206,7 @@ Usually, sensors need to be positioned in specific locations or orientations to 
    - Questions
       - How accurately can the sensor detect the car's presence and distance?
       - Could the system distract drivers or disrupt traffic flow?
-   - What to physically prototype
+      - What to physically prototype
       - Need to simulate the system and test its accuracy in detecting passing cars under various conditions and conduct safety assessments and consider how to minimize distractions or potential hazards.
 1. Using two rotary encoders to simulate a radio’s dial buttons.The angular positions are detected to change the volume and frequency to the right number. 
    - Questions
