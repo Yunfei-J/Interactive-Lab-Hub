@@ -197,17 +197,17 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 
 1. Place distance detectors on the side of street curbs to detect cars passing by. Whenever a car passes by, a signal will be sent from the detector.
    - Questions
-   -How accurately can the sensor detect the car's presence and distance?
-   -Could the system distract drivers or disrupt traffic flow?
+      - How accurately can the sensor detect the car's presence and distance?
+      - Could the system distract drivers or disrupt traffic flow?
    - What to physically prototype
-   -Need to simulate the system and test its accuracy in detecting passing cars under various conditions and conduct safety assessments and consider how to minimize distractions or potential hazards.
+      - Need to simulate the system and test its accuracy in detecting passing cars under various conditions and conduct safety assessments and consider how to minimize distractions or potential hazards.
 1. Using two rotary encoders to simulate a radio’s dial buttons.The angular positions are detected to change the volume and frequency to the right number. 
-   -Questions
-   -What is the range and sensitivity of the volume control?
-   -How can we ensure accurate and reliable gesture recognition?
-   -Any feedback mechanisms (e.g., LED indicators, audio cues) to confirm user actions?
-   -What to physically prototype
-   -Need to set up rotary actuators and create a mechanism to control the radio's volume using these actuators. Create a user-friendly interface and feedback system that allows users to interact with the radio easily and understand the status of volume and channel selection.
+   - Questions
+      - What is the range and sensitivity of the volume control?
+   - How can we ensure accurate and reliable gesture recognition?
+      - Any feedback mechanisms (e.g., LED indicators, audio cues) to confirm user actions?
+   - What to physically prototype
+      - Need to set up rotary actuators and create a mechanism to control the radio's volume using these actuators.        - Create a user-friendly interface and feedback system that allows users to interact with the radio easily and understand the status of volume and channel selection.
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
 
