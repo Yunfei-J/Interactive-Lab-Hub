@@ -196,10 +196,10 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
 1. Place distance detectors on the side of street curbs to detect cars passing by. Whenever a car passes by, a signal will be sent from the detector.
-   -Questions
+   _Questions
    -How accurately can the sensor detect the car's presence and distance?
    -Could the system distract drivers or disrupt traffic flow?
-   -What to physically prototype
+   _What to physically prototype
    -Need to simulate the system and test its accuracy in detecting passing cars under various conditions and conduct safety assessments and consider how to minimize distractions or potential hazards.
 1. Using two rotary encoders to simulate a radio’s dial buttons.The angular positions are detected to change the volume and frequency to the right number. 
    -Questions
