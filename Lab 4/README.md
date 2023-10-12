@@ -272,13 +272,17 @@ Think about how you want to present the information about what your sensor is se
 
 Build a cardboard prototype of your design.
 
-The size doesn't have to be big because the display is what matters. But since the displays we could use are small, we want to connect the webcam to utilize its speaker to read the information out so that the person interacting with it doesn't necessarily need to receive the information visually.
+The size doesn't have to be big because the display is what matters. But since the screens we could use are small, we want to connect the webcam to utilize its speaker to read the information out so that the person interacting with it doesn't necessarily need to receive the information visually.
 
 **\*\*\*Document your rough prototype.\*\*\***
 The capacitive sensor is connected to the pi, and each contact will be linked to a bag of snack. When a snack bag is touched, the number on the display will increment by 1.
+
 Since the most crucial information in the device is the number of times that snacks were opened, to maximize its font size on the display, we wrote every other words on the 'costume' of pi.
-The buttons on the display can be used for resetting the number to zero.
-A webcame will be later connected to the pi later on.
+
+The buttons on the MiniTFTs can be used for resetting the number to zero.
+
+A webcam will be later connected to the pi to produce audio output with its speaker.
+
 
 
 
