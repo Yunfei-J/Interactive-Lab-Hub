@@ -231,17 +231,17 @@ def draw_lines(keypoints, image, bad_pts):
     # math.dist(keypoints[0],keypoints[9])
 
     # play sound
-    while True:
-        # proxValue = oProx.get_proximity()
-        # print("Proximity Value: %d" % proxValue)
-        time.sleep(.1)
-        frequency = distance_value*3
-        try:
-            t = np.arange(sr) / sr  # Generate a time vector for one second
-            y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
-            sd_stream.write(y)
-        except KeyboardInterrupt:
-            break
+    # while True:
+    #     # proxValue = oProx.get_proximity()
+    #     # print("Proximity Value: %d" % proxValue)
+    #     time.sleep(.1)
+    #     frequency = distance_value*3
+    #     try:
+    #         t = np.arange(sr) / sr  # Generate a time vector for one second
+    #         y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+    #         sd_stream.write(y)
+    #     except KeyboardInterrupt:
+    #         break
 
     #color = (255, 0, 0)
     color = (0, 255, 0)
