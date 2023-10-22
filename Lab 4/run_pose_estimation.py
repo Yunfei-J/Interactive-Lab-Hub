@@ -226,7 +226,7 @@ def get_offsets(output_details, coords, num_key_points=17):
 
 def draw_lines(keypoints, image, bad_pts):
     """connect important body part keypoints with lines"""
-    distance_value = abs(keypoints[10][0]-keypoints[9][0])
+    distance_value = abs(keypoints[0][1]-keypoints[9][0])
     # distance_value = keypoints[0][1]
     # print(distance_value)
     # math.dist(keypoints[0],keypoints[9])
