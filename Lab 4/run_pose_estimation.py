@@ -37,8 +37,8 @@ GPIO.setup(4, GPIO.OUT)
 #button
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-from __future__ import print_function
-import qwiic_proximity
+# from __future__ import print_function
+# import qwiic_proximity
 import time
 import sys
 import sounddevice as sd
