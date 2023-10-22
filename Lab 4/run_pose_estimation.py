@@ -228,13 +228,13 @@ def draw_lines(keypoints, image, bad_pts):
     """connect important body part keypoints with lines"""
     distance_value = abs(keypoints[10][0]-keypoints[9][0])
     # distance_value = keypoints[0][1]
-    print(distance_value)
+    # print(distance_value)
     # math.dist(keypoints[0],keypoints[9])
 
     # # play sound
     time.sleep(.1)
     frequency = distance_value*10
-
+    print(frequency)
     
     t = np.arange(sr) / sr  # Generate a time vector for one second
     y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
