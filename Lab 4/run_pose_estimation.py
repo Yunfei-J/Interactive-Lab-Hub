@@ -54,7 +54,8 @@ sr = 44100  # Sample rate
 # Start the sound stream
 sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
 sd_stream.start()
-
+change_interval = 0.1  # seconds
+next_change_time = time.time() + change_interval
 
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
 # Source - Adrian Rosebrock, PyImageSearch: https://www.pyimagesearch.com/2015/12/28/increasing-raspberry-pi-fps-with-python-and-opencv/
@@ -226,17 +227,21 @@ def get_offsets(output_details, coords, num_key_points=17):
 
 def draw_lines(keypoints, image, bad_pts):
     """connect important body part keypoints with lines"""
-    distance_value = abs(keypoints[0][1]-keypoints[9][0])
+    
     # distance_value = keypoints[0][1]
     # print(distance_value)
     # math.dist(keypoints[0],keypoints[9])
+    if time.time() >= next_change_time:
+        distance_value = abs(keypoints[0][1]-keypoints[9][0])
+        frequency = distance_value*10
+        next_change_time += change_interval
 
     # # play sound
-    time.sleep(.1)
-    frequency = distance_value*10
-    print(frequency)
+    # time.sleep(.1)
+    # frequency = distance_value*10
+    # print(frequency)
     
-    t = np.arange(sr) / sr  # Generate a time vector for one second
+    t = np.arange(int(sr * change_interval)) / sr  # Generate a time vector for the specified duration
     y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
     sd_stream.write(y)
 
