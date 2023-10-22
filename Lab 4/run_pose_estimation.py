@@ -222,7 +222,7 @@ def draw_lines(keypoints, image, bad_pts):
         start_pos = (int(keypoints[map_pair[0]][1]), int(keypoints[map_pair[0]][0]))
         end_pos = (int(keypoints[map_pair[1]][1]), int(keypoints[map_pair[1]][0]))
         image = cv2.line(image, start_pos, end_pos, color, thickness)
-        print(keypoints)
+        # print(keypoints)
     return image
 
 #flag for debugging
