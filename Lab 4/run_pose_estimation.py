@@ -208,8 +208,8 @@ def get_offsets(output_details, coords, num_key_points=17):
 
 def draw_lines(keypoints, image, bad_pts):
     """connect important body part keypoints with lines"""
-    print(math.dist(keypoints[0],keypoints[9]))
-    math.dist(keypoints[0],keypoints[9])
+    print(abs(keypoints[0][1]-keypoints[9][1]))
+    # math.dist(keypoints[0],keypoints[9])
     #color = (255, 0, 0)
     color = (0, 255, 0)
     thickness = 2
