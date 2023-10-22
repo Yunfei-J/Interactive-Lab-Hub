@@ -233,12 +233,11 @@ def draw_lines(keypoints, image, bad_pts):
     # # play sound
     time.sleep(.1)
     frequency = distance_value*10
-    try:
-        t = np.arange(sr) / sr  # Generate a time vector for one second
-        y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
-        sd_stream.write(y)
-    except KeyboardInterrupt:
-        break
+    
+    t = np.arange(sr) / sr  # Generate a time vector for one second
+    y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+    sd_stream.write(y)
+
     # while True:
     #     # proxValue = oProx.get_proximity()
     #     # print("Proximity Value: %d" % proxValue)
