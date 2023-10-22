@@ -1,19 +1,3 @@
-# import numpy as np
-# import sounddevice as sd
-
-# # Create a sine wave
-# A = 1
-# f = 440
-# phi = 0
-# sr = 44100
-# T = 2
-# t = np.linspace(0, T, int(sr * T), endpoint=False)
-# y = A * np.sin(2 * np.pi * f * t + phi)
-
-# # Play the sine wave
-# sd.play(y, sr)
-# sd.wait()
-
 import sounddevice as sd
 import numpy as np
 import time
@@ -23,6 +7,9 @@ A = 1  # Amplitude
 frequency = 1000  # Fixed frequency
 phi = 0  # Phase
 sr = 44100  # Sample rate
+num = 0
+f_list = [194,779,284,156,732,739,145,995,573,672,183,95,529,194,779,284,156,732,739,145,995,573,672,183,95,529]
+
 
 # Start the sound stream
 sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
@@ -32,10 +19,11 @@ sd_stream.start()
 change_interval = 0.1  # seconds
 next_change_time = time.time() + change_interval
 
-while True:
+while num<len(f_list)-1:
+    num += 1
     # Check if it's time to change the frequency
     if time.time() >= next_change_time:
-        frequency -= 10
+        frequency = f_list[num]
         print(frequency)
         next_change_time += change_interval
 
