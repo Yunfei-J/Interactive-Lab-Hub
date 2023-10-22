@@ -70,4 +70,10 @@ if [ $version == "3.9" ]; then
 fi
 pip3 install tflite_runtime-2.11.0-cp39-cp39-manylinux2014_x86_64.whl
 
+<<<<<<< HEAD
 >>>>>>> f282fc1ec416d2404d6f110aa9aa54c711331cd9
+=======
+if [ $version == "3.5" ]; then
+pip3 install https://github.com/google-coral/pycoral/releases/download/release-frogfish/tflite_runtime-2.5.0-cp35-cp35m-linux_armv7l.whl
+fi
+>>>>>>> 053b19d1661768d56431a5ec6b5245eca245163b
