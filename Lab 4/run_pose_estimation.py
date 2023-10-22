@@ -230,7 +230,7 @@ try:
     while True:
     #if True:
         #make sure LED is off and wait for button press
-        if not led_on and  not GPIO.input(17):
+        # if not led_on and  not GPIO.input(17):
         #if True:
             #timestamp an output directory for each capture
             outdir = pathlib.Path(args.output_path) / time.strftime('%Y-%m-%d_%H-%M-%S-%Z')
