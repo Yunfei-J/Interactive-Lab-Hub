@@ -208,6 +208,7 @@ def get_offsets(output_details, coords, num_key_points=17):
 
 def draw_lines(keypoints, image, bad_pts):
     """connect important body part keypoints with lines"""
+    print(keypoints)
     #color = (255, 0, 0)
     color = (0, 255, 0)
     thickness = 2
@@ -220,6 +221,7 @@ def draw_lines(keypoints, image, bad_pts):
         start_pos = (int(keypoints[map_pair[0]][1]), int(keypoints[map_pair[0]][0]))
         end_pos = (int(keypoints[map_pair[1]][1]), int(keypoints[map_pair[1]][0]))
         image = cv2.line(image, start_pos, end_pos, color, thickness)
+        print(keypoints)
     return image
 
 #flag for debugging
