@@ -232,7 +232,8 @@ def draw_lines(keypoints, image, bad_pts):
 
     # # play sound
     time.sleep(.1)
-    frequency = distance_value*5
+    frequency = distance_value*7
+
     
     t = np.arange(sr) / sr  # Generate a time vector for one second
     y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
