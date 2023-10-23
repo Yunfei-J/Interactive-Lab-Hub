@@ -60,7 +60,7 @@ sd_stream.start()
 # Source - Adrian Rosebrock, PyImageSearch: https://www.pyimagesearch.com/2015/12/28/increasing-raspberry-pi-fps-with-python-and-opencv/
 class VideoStream:
     """Camera object that controls video streaming from the Picamera"""
-    def __init__(self,resolution=(640,480),framerate=120):
+    def __init__(self,resolution=(640,480),framerate=30):
         # Initialize the PiCamera and the camera image stream
         #breakpoint()
         
@@ -288,7 +288,7 @@ try:
             # Initialize frame rate calculation
             frame_rate_calc = 1
             freq = cv2.getTickFrequency()
-            videostream = VideoStream(resolution=(imW,imH),framerate=120).start()
+            videostream = VideoStream(resolution=(imW,imH),framerate=60).start()
             time.sleep(0.1)
 
             #for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=True):
