@@ -309,15 +309,15 @@ def draw_lines(keypoints, image, bad_pts):
     next_change_time += change_interval
     chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
 
-    if distance_value >= 0 and distance_value < 20:
+    if distance_value >= 0 and distance_value < 40:
         frequency1, frequency2, frequency3 = chords_list[0][0],chords_list[0][1],chords_list[0][2]
-    if distance_value >= 20 and distance_value < 40:
-        frequency1, frequency2, frequency3 = chords_list[1][0],chords_list[1][1],chords_list[1][2]
     if distance_value >= 40 and distance_value < 60:
+        frequency1, frequency2, frequency3 = chords_list[1][0],chords_list[1][1],chords_list[1][2]
+    if distance_value >= 60 and distance_value < 80:
         frequency1, frequency2, frequency3 = chords_list[2][0],chords_list[2][1],chords_list[2][2]
-    if distance_value >=60 and distance_value < 80:
+    if distance_value >=80 and distance_value < 100:
         frequency1, frequency2, frequency3 = chords_list[3][0],chords_list[3][1],chords_list[3][2]
-    if distance_value >=80:
+    if distance_value >=100:
         frequency1, frequency2, frequency3 = chords_list[4][0],chords_list[4][1],chords_list[4][2]
 
     t = np.arange(int(sr * change_interval)) / sr  # Generate a time vector for one second
