@@ -300,6 +300,7 @@ def draw_lines(keypoints, image, bad_pts):
     # print(distance_value)
     # math.dist(keypoints[0],keypoints[9])
 
+    print(distance_value)
     # # play sound
     change_interval = 0.1  # seconds
     next_change_time = time.time() + change_interval
