@@ -302,9 +302,9 @@ def draw_lines(keypoints, image, bad_pts):
 
     print(distance_value)
     # # play sound
-    change_interval = 0.1  # seconds
+    change_interval = 2  # seconds
     next_change_time = time.time() + change_interval
-    time.sleep(.1)
+    # time.sleep(3)
     
     next_change_time += change_interval
     chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
