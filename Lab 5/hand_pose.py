@@ -9,6 +9,9 @@ m = alsaaudio.Mixer(control='Speaker', cardindex=1)
 m.setvolume(5) 
 import subprocess
 
+
+print(cv2.__version__)
+
 def play_audio():
     command = ['./loop_audio.sh']
     process = subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
