@@ -1,2 +1,2 @@
-0 Doing nothing
-1 Drinking water
+0 DoingNothing
+1 DrinkingWater
