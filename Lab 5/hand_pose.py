@@ -5,9 +5,14 @@ import HandTrackingModule as htm
 import math
 from ctypes import cast, POINTER
 import alsaaudio
+<<<<<<< HEAD
 
 m = alsaaudio.Mixer(control='Speaker', cardindex=3)
 m.setvolume(5) 
+=======
+m = alsaaudio.Mixer(control='Speaker', cardindex=1)
+m.setvolume(0) 
+>>>>>>> 6b044fc9255852bf688486964136f22841396637
 import subprocess
 
 import sounddevice as sd
@@ -20,9 +25,8 @@ phi = 0  # Phase
 sr = 44100  # Sample rate
 
 # Start the sound stream
-sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32', blocksize=2048)
+sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
 sd_stream.start()
-
 
 def play_audio():
     command = ['./loop_audio.sh']
@@ -48,8 +52,10 @@ vol = 0
 volBar = 400
 volPer = 0
 
-minFreq = 440  # Minimum frequency
-maxFreq = 1000  # Maximum frequency
+minFreq = 440
+maxFreq = 1000
+
+
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
@@ -79,8 +85,17 @@ while True:
         length2 = len_calc(middleX, middleY, ringX, ringY)
         length3 = len_calc(ringX, ringY, pinkyX, pinkyY)
         length4 = len_calc(thumbX,thumbY, ringX, ringY)
-        print(length1,length2,length3)
+        # print(length1,length2,length3)
         condition = length>100 and length1>100 and length2<100 and length3>100 and length4<100
+
+        frequency = np.interp(length, [50, 300], [minFreq, maxFreq])
+        print("frequency = " + str(frequency))
+        try:
+            t = np.arange(sr) / sr  # Generate a time vector for one second
+            y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+            sd_stream.write(y)
+        except KeyboardInterrupt:
+            break
         # if condition:
         #     m.setvolume(0)
         #     volPer = 0
@@ -94,12 +109,8 @@ while True:
         #     volBar = np.interp(length, [50, 300], [400, 150])
         #     volPer = np.interp(length, [50, 300], [0, 100])
         #     m.setvolume(int(vol))
-        frequency = np.interp(length, [50, 300], [minFreq, maxFreq])
-        t = np.arange(sr) / sr  # Generate a time vector for one second
-        y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
-        sd_stream.write(y)
 
-        print(int(length), vol)
+        # print(int(length), vol)
 
  
         if length < 50:
@@ -122,7 +133,9 @@ while True:
         audio_process.terminate()  #
         break
 
+# Stop and close the sound stream
 sd_stream.stop()
 sd_stream.close()
+
 cap.release()
 cv2.destroyAllWindows()
