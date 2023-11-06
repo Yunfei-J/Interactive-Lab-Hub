@@ -317,6 +317,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
     chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
 
     if leftArmAngle <= 20 or rightArmAngle <= 20:
+        global frequency1, frequency2, frequency3
         frequency1, frequency2, frequency3 = chords_list[0][0],chords_list[0][1],chords_list[0][2]
     
 
