@@ -324,7 +324,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
 
     print (pygame.mixer.music.get_busy())
     
-    if leftArmAngle <= 0 or rightArmAngle <= 0:
+    if leftArmAngle <= 1 or rightArmAngle <= 1:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
         pygame.mixer.Sound.set_volume(game_over_sound, 2)
         # game_over_sound.play()
@@ -406,7 +406,6 @@ try:
                 keypoint_positions = coords * output_stride + offset_vectors
             
                 # Loop over all detections and draw detection box if confidence is above minimum threshold
-                print(keypoint_positions)
                 for i in range(len(keypoint_positions)):
                     #don't draw low confidence points
                     if i in drop_pts:
