@@ -29,13 +29,13 @@ import importlib.util
 import datetime
 
 import time
-import RPi.GPIO as GPIO
-
-GPIO.setmode(GPIO.BCM)
-#led
-GPIO.setup(4, GPIO.OUT)
-#button
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+# import RPi.GPIO as GPIO
+# 
+# GPIO.setmode(GPIO.BCM)
+# #led
+# GPIO.setup(4, GPIO.OUT)
+# #button
+# GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # from __future__ import print_function
 # import qwiic_proximity
@@ -45,68 +45,68 @@ import sounddevice as sd
 import numpy as np
 
 
-# ## pi display
-# import subprocess
-# import digitalio
-# import board
-# from PIL import Image, ImageDraw, ImageFont
-# import adafruit_rgb_display.st7789 as st7789
-# from time import strftime, sleep
+## pi display
+import subprocess
+import digitalio
+import board
+from PIL import Image, ImageDraw, ImageFont
+import adafruit_rgb_display.st7789 as st7789
+from time import strftime, sleep
 
-# # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
-# cs_pin = digitalio.DigitalInOut(board.CE0)
-# dc_pin = digitalio.DigitalInOut(board.D25)
-# reset_pin = None
+# Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
+cs_pin = digitalio.DigitalInOut(board.CE0)
+dc_pin = digitalio.DigitalInOut(board.D25)
+reset_pin = None
 
-# # Config for display baudrate (default max is 24mhz):
-# BAUDRATE = 64000000
+# Config for display baudrate (default max is 24mhz):
+BAUDRATE = 64000000
 
-# # Setup SPI bus using hardware SPI:
-# spi = board.SPI()
+# Setup SPI bus using hardware SPI:
+spi = board.SPI()
 
-# # Create the ST7789 display:
-# disp = st7789.ST7789(
-#     spi,
-#     cs=cs_pin,
-#     dc=dc_pin,
-#     rst=reset_pin,
-#     baudrate=BAUDRATE,
-#     width=135,
-#     height=240,
-#     x_offset=53,
-#     y_offset=40,
-# )
+# Create the ST7789 display:
+disp = st7789.ST7789(
+    spi,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+    width=135,
+    height=240,
+    x_offset=53,
+    y_offset=40,
+)
 
-# # Create blank image for drawing.
-# # Make sure to create image with mode 'RGB' for full color.
-# height = disp.width  # we swap height/width to rotate it to landscape!
-# width = disp.height
-# image = Image.new("RGB", (width, height))
-# rotation = 90
+# Create blank image for drawing.
+# Make sure to create image with mode 'RGB' for full color.
+height = disp.width  # we swap height/width to rotate it to landscape!
+width = disp.height
+image = Image.new("RGB", (width, height))
+rotation = 90
 
-# # Get drawing object to draw on image.
-# draw = ImageDraw.Draw(image)
+# Get drawing object to draw on image.
+draw = ImageDraw.Draw(image)
 
-# # Draw a black filled box to clear the image.
-# draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-# disp.image(image, rotation)
-# # Draw some shapes.
-# # First define some constants to allow easy resizing of shapes.
-# padding = -2
-# top = padding
-# bottom = height - padding
-# # Move left to right keeping track of the current x position for drawing shapes.
-# x = 0
+# Draw a black filled box to clear the image.
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+disp.image(image, rotation)
+# Draw some shapes.
+# First define some constants to allow easy resizing of shapes.
+padding = -2
+top = padding
+bottom = height - padding
+# Move left to right keeping track of the current x position for drawing shapes.
+x = 0
 
-# # Alternatively load a TTF font.  Make sure the .ttf font file is in the
-# # same directory as the python script!
-# # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-# font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+# Alternatively load a TTF font.  Make sure the .ttf font file is in the
+# same directory as the python script!
+# Some other nice fonts to try: http://www.dafont.com/bitmap.php
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
-# # Turn on the backlight
-# backlight = digitalio.DigitalInOut(board.D22)
-# backlight.switch_to_output()
-# backlight.value = True
+# Turn on the backlight
+backlight = digitalio.DigitalInOut(board.D22)
+backlight.switch_to_output()
+backlight.value = True
 
 
 
@@ -293,7 +293,7 @@ def get_offsets(output_details, coords, num_key_points=17):
         offset_vectors = np.vstack((offset_vectors, get_offset_point(heatmap_y, heatmap_x, offsets, i, num_key_points)))  
     return offset_vectors
 
-def draw_lines(keypoints, image, bad_pts):
+def draw_lines(keypoints, imageCV, bad_pts):
     """connect important body part keypoints with lines"""
     distance_value = abs(keypoints[0][1]-keypoints[9][1])
     # distance_value = keypoints[0][1]
@@ -330,18 +330,18 @@ def draw_lines(keypoints, image, bad_pts):
     sd_stream.write(y)
 
 
-    # draw.rectangle((0, 0, width, height), outline=0, fill=400)
-    # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-    # y = top
-    # # display_time = strftime("%m/%d/%Y %H:%M:%S")
-    # text_content = "You pulled"
-    # text_length = str(distance_value)
+    draw.rectangle((0, 0, width, height), outline=0, fill=400)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    y = top
+    # display_time = strftime("%m/%d/%Y %H:%M:%S")
+    text_content = "You pulled"
+    text_length = str(distance_value)
 
-    # draw.text((x, y), text_content + text_length, font=font, fill="#FFFFFF")
+    draw.text((x, y), text_content + text_length, font=font, fill="#FFFFFF")
 
-    # # Display image.
-    # disp.image(image, rotation)
-    # time.sleep(1)
+    # Display image.
+    disp.image(image, rotation)
+#     time.sleep(1)
 
 
     # while True:
@@ -367,9 +367,9 @@ def draw_lines(keypoints, image, bad_pts):
             continue
         start_pos = (int(keypoints[map_pair[0]][1]), int(keypoints[map_pair[0]][0]))
         end_pos = (int(keypoints[map_pair[1]][1]), int(keypoints[map_pair[1]][0]))
-        image = cv2.line(image, start_pos, end_pos, color, thickness)
+        imageCV = cv2.line(imageCV, start_pos, end_pos, color, thickness)
         # print(keypoints)
-    return image
+    return imageCV
 
 #flag for debugging
 debug = True 
@@ -384,7 +384,7 @@ try:
             #timestamp an output directory for each capture
             outdir = pathlib.Path(args.output_path) / time.strftime('%Y-%m-%d_%H-%M-%S-%Z')
             outdir.mkdir(parents=True)
-            GPIO.output(4, True)
+#             GPIO.output(4, True)
             time.sleep(.1)
             led_on = True
             f = []
@@ -462,9 +462,9 @@ try:
                 status = cv2.imwrite(path, frame_resized)
 
                 # Press 'q' to quit
-                if cv2.waitKey(1) == ord('q') or led_on and not GPIO.input(17):
+                if cv2.waitKey(1) == ord('q'):
                     print(f"Saved images to: {outdir}")
-                    GPIO.output(4, False)
+#                     GPIO.output(4, False)
                     led_on = False
                     # Clean up
                     cv2.destroyAllWindows()
@@ -477,6 +477,6 @@ except KeyboardInterrupt:
     cv2.destroyAllWindows()
     videostream.stop()
     print('Stopped video stream.')
-    GPIO.output(4, False)
-    GPIO.cleanup()
+#     GPIO.output(4, False)
+#     GPIO.cleanup()
     #print(str(sum(f)/len(f)))
