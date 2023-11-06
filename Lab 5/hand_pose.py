@@ -5,14 +5,10 @@ import HandTrackingModule as htm
 import math
 from ctypes import cast, POINTER
 import alsaaudio
-<<<<<<< HEAD
 
-m = alsaaudio.Mixer(control='Speaker', cardindex=3)
-m.setvolume(5) 
-=======
 m = alsaaudio.Mixer(control='Speaker', cardindex=1)
-m.setvolume(0) 
->>>>>>> 6b044fc9255852bf688486964136f22841396637
+m.setvolume(5) 
+
 import subprocess
 
 import sounddevice as sd
