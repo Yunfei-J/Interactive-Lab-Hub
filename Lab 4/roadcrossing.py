@@ -323,7 +323,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
         game_over_sound = pygame.mixer.Sound('myFile.wav')
         pygame.mixer.Sound.set_volume(game_over_sound, 0.5)
         pygame.mixer.music.load(game_over_sound)
-        pygame.mixer.music.play()
+        game_over_sound.play()
 
 
     #color = (255, 0, 0)
