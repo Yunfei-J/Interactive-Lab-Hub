@@ -323,7 +323,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
 
     print (pygame.mixer.music.get_busy())
     
-    if leftArmAngle <= 1 or rightArmAngle <= 1:
+    if leftArmAngle <= 20 or rightArmAngle <= 20:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
         pygame.mixer.Sound.set_volume(game_over_sound, 2)
         # game_over_sound.play()
