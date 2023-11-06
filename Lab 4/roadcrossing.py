@@ -320,47 +320,10 @@ def draw_lines(keypoints, imageCV, bad_pts):
 
     if leftArmAngle <= 20 or rightArmAngle <= 20:
         pygame.mixer.init()
+        pygame.mixer.music.set_volume(1)
         pygame.mixer.music.load("myFile.wav")
         pygame.mixer.music.play()
-        # global frequency1, frequency2, frequency3
-        # frequency1, frequency2, frequency3 = chords_list[0][0],chords_list[0][1],chords_list[0][2]
-    
 
-    # t = np.arange(int(sr * change_interval)) / sr  # Generate a time vector for one second
-    # y1 = A * np.sin(2 * np.pi * frequency1 * t + phi).astype('float32')
-    # y2 = A * np.sin(2 * np.pi * frequency2 * t + phi).astype('float32')
-    # y3 = A * np.sin(2 * np.pi * frequency3 * t + phi).astype('float32')
-    # # Add the three signals together
-    # y = (y1 + y2 + y3) / 3  # Adjust the scaling factor for desired volume balance
-
-    # sd_stream.write(y)
-
-
-#     draw.rectangle((0, 0, width, height), outline=0, fill=400)
-#     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-#     y = top
-#     # display_time = strftime("%m/%d/%Y %H:%M:%S")
-#     text_content = "You pulled"
-#     text_length = str(distance_value)
-
-#     draw.text((x, y), text_content + text_length, font=font, fill="#FFFFFF")
-
-#     # Display image.
-#     disp.image(image, rotation)
-# #     time.sleep(1)
-
-
-    # while True:
-    #     # proxValue = oProx.get_proximity()
-    #     # print("Proximity Value: %d" % proxValue)
-    #     time.sleep(.1)
-    #     frequency = distance_value*10
-    #     try:
-    #         t = np.arange(sr) / sr  # Generate a time vector for one second
-    #         y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
-    #         sd_stream.write(y)
-    #     except KeyboardInterrupt:
-    #         break
 
     #color = (255, 0, 0)
     color = (0, 255, 0)
