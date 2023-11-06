@@ -318,11 +318,14 @@ def draw_lines(keypoints, imageCV, bad_pts):
     next_change_time += change_interval
     chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
 
+    
+    
     if leftArmAngle <= 5 or rightArmAngle <= 5:
-        pygame.mixer.init()
-        game_over_sound = pygame.mixer.Sound('myFile.wav')
-        pygame.mixer.Sound.set_volume(game_over_sound, 5)
-        game_over_sound.play()
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.init()
+            game_over_sound = pygame.mixer.Sound('myFile.wav')
+            pygame.mixer.Sound.set_volume(game_over_sound, 5)
+            game_over_sound.play()
 
 
     #color = (255, 0, 0)
