@@ -127,6 +127,9 @@ sr = 44100  # Sample rate
 sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
 sd_stream.start()
 pygame.mixer.init()
+game_over_sound = pygame.mixer.Sound('myFile.wav')
+pygame.mixer.Sound.set_volume(game_over_sound, 0)
+game_over_sound.play()
 
 
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
@@ -323,11 +326,11 @@ def draw_lines(keypoints, imageCV, bad_pts):
     
     
     if leftArmAngle <= 5 or rightArmAngle <= 5:
-        game_over_sound = pygame.mixer.Sound('myFile.wav')
-        pygame.mixer.Sound.set_volume(game_over_sound, 5)
-        game_over_sound.play()
-        while (pygame.mixer.get_busy()):
-            time.sleep(10)
+        # game_over_sound = pygame.mixer.Sound('myFile.wav')
+        pygame.mixer.Sound.set_volume(game_over_sound, 2)
+        # game_over_sound.play()
+        # while (pygame.mixer.get_busy()):
+        #     time.sleep(10)
         # if game_over_sound.get_busy() == True:
         #     # print (pygame.mixer.music.get_busy())
         #     # game_over_sound = pygame.mixer.Sound('myFile.wav')
