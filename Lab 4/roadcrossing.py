@@ -331,6 +331,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
         #     time.sleep(10)
         # if game_over_sound.get_busy() == True:
         game_over_sound = pygame.mixer.Sound('myFile.wav')
+    else:
+        pygame.mixer.Sound.set_volume(game_over_sound, 0)
 
 
     color = (0, 255, 0)
@@ -421,6 +423,7 @@ try:
                         cv2.putText(frame_resized, str(i), (x-4, y-4), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1) # Draw label text
      
                 frame_resized = draw_lines(keypoint_positions, frame_resized, drop_pts)
+                time.sleep(20)
 
                 # Draw framerate in corner of frame - remove for small image display
                 #cv2.putText(frame,'FPS: {0:.2f}'.format(frame_rate_calc),(30,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,0),2,cv2.LINE_AA)
