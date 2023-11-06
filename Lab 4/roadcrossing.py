@@ -330,18 +330,18 @@ def draw_lines(keypoints, imageCV, bad_pts):
     sd_stream.write(y)
 
 
-    draw.rectangle((0, 0, width, height), outline=0, fill=400)
-    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-    y = top
-    # display_time = strftime("%m/%d/%Y %H:%M:%S")
-    text_content = "You pulled"
-    text_length = str(distance_value)
+#     draw.rectangle((0, 0, width, height), outline=0, fill=400)
+#     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+#     y = top
+#     # display_time = strftime("%m/%d/%Y %H:%M:%S")
+#     text_content = "You pulled"
+#     text_length = str(distance_value)
 
-    draw.text((x, y), text_content + text_length, font=font, fill="#FFFFFF")
+#     draw.text((x, y), text_content + text_length, font=font, fill="#FFFFFF")
 
-    # Display image.
-    disp.image(image, rotation)
-#     time.sleep(1)
+#     # Display image.
+#     disp.image(image, rotation)
+# #     time.sleep(1)
 
 
     # while True:
