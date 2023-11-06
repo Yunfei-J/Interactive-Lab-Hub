@@ -326,6 +326,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
     if leftArmAngle <= 0.3 or rightArmAngle <= 0.3:
         pygame.mixer.Sound.set_volume(game_over_sound, 2)
         playingPhone == True
+        print (playingPhone)
+        status = cv2.imwrite(path, frame_resized)
         # game_over_sound.play()
         # if game_over_sound.get_busy() == True:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
@@ -437,9 +439,9 @@ try:
                 # save image with time stamp to directory
                 path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
 
-                if playingPhone == True:
-                    print (playingPhone)
-                    status = cv2.imwrite(path, frame_resized)
+                # if playingPhone == True:
+                #     print (playingPhone)
+                #     status = cv2.imwrite(path, frame_resized)
 
                 # Press 'q' to quit
                 if cv2.waitKey(1) == ord('q'):
