@@ -65,6 +65,7 @@ BAUDRATE = 64000000
 
 # Setup SPI bus using hardware SPI:
 spi = board.SPI()
+boolean_isPlaying = False
 
 # Create the ST7789 display:
 disp = st7789.ST7789(
@@ -324,7 +325,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
     next_change_time += change_interval
     chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
 
-    
+    print (pygame.mixer.music.get_busy())
     
     if leftArmAngle <= 5 or rightArmAngle <= 5:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
@@ -333,8 +334,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
         # while (pygame.mixer.get_busy()):
         #     time.sleep(10)
         # if game_over_sound.get_busy() == True:
-        #     # print (pygame.mixer.music.get_busy())
-        #     # game_over_sound = pygame.mixer.Sound('myFile.wav')
+        game_over_sound = pygame.mixer.Sound('myFile.wav')
         #     pygame.mixer.Sound.set_volume(game_over_sound, 5)
         #     game_over_sound.play()
 
@@ -412,6 +412,7 @@ try:
                 keypoint_positions = coords * output_stride + offset_vectors
             
                 # Loop over all detections and draw detection box if confidence is above minimum threshold
+                print(keypoint_positions)
                 for i in range(len(keypoint_positions)):
                     #don't draw low confidence points
                     if i in drop_pts:
@@ -440,7 +441,7 @@ try:
                 f.append(frame_rate_calc)
     
                 #save image with time stamp to directory
-                path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
+                # path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
 
                 status = cv2.imwrite(path, frame_resized)
 
