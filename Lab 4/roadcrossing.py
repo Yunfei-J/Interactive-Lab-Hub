@@ -120,11 +120,13 @@ frequency3 = 590  # Third frequency
 phi = 0  # Phase
 sr = 44100  # Sample rate
 
+
 # chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
 
 # Start the sound stream
 sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
 sd_stream.start()
+pygame.mixer.init()
 
 
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
@@ -321,7 +323,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
     
     
     if leftArmAngle <= 5 or rightArmAngle <= 5:
-        pygame.mixer.init()
+        
         if not pygame.mixer.music.get_busy():
             print (pygame.mixer.music.get_busy())
             game_over_sound = pygame.mixer.Sound('myFile.wav')
