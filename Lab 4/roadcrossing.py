@@ -312,9 +312,6 @@ def draw_lines(keypoints, imageCV, bad_pts):
     # 10 rightWrist
     leftArmAngle = abs(keypoints[9][1]-keypoints[7][1])
     rightArmAngle = abs(keypoints[10][1]-keypoints[8][1])
-    # distance_value = keypoints[0][1]
-    # print(distance_value)
-    # math.dist(keypoints[0],keypoints[9])
 
     print(leftArmAngle,rightArmAngle)
     # # play sound
@@ -327,7 +324,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
 
     print (pygame.mixer.music.get_busy())
     
-    if leftArmAngle <= 5 or rightArmAngle <= 5:
+    if leftArmAngle <= 0 or rightArmAngle <= 0:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
         pygame.mixer.Sound.set_volume(game_over_sound, 2)
         # game_over_sound.play()
@@ -335,11 +332,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
         #     time.sleep(10)
         # if game_over_sound.get_busy() == True:
         game_over_sound = pygame.mixer.Sound('myFile.wav')
-        #     pygame.mixer.Sound.set_volume(game_over_sound, 5)
-        #     game_over_sound.play()
 
 
-    #color = (255, 0, 0)
     color = (0, 255, 0)
     thickness = 2
     #refernce for keypoint indexing: https://www.tensorflow.org/lite/models/pose_estimation/overview
@@ -440,10 +434,10 @@ try:
                 frame_rate_calc= 1/time1
                 f.append(frame_rate_calc)
     
-                #save image with time stamp to directory
+                # save image with time stamp to directory
                 # path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
 
-                status = cv2.imwrite(path, frame_resized)
+                # status = cv2.imwrite(path, frame_resized)
 
                 # Press 'q' to quit
                 if cv2.waitKey(1) == ord('q'):
