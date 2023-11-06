@@ -309,8 +309,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
     # 8	rightElbow
     # 9	leftWrist
     # 10 rightWrist
-    leftArmAngle = abs(keypoints[9][1]-keypoints[7][1])
-    rightArmAngle = abs(keypoints[10][1]-keypoints[8][1])
+    leftArmAngle = abs(keypoints[9][1]-keypoints[7][1])/abs(keypoints[9][1]-keypoints[5][1])
+    rightArmAngle = abs(keypoints[10][1]-keypoints[8][1])/abs(keypoints[10][1]-keypoints[6][1])
 
     print(leftArmAngle,rightArmAngle)
     # # play sound
@@ -323,7 +323,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
 
     print (pygame.mixer.music.get_busy())
     
-    if leftArmAngle <= 20 or rightArmAngle <= 20:
+    if leftArmAngle <= 0.3 or rightArmAngle <= 0.3:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
         pygame.mixer.Sound.set_volume(game_over_sound, 2)
         # game_over_sound.play()
