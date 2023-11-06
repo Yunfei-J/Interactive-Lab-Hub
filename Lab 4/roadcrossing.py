@@ -423,8 +423,7 @@ try:
                     if debug:
                         cv2.putText(frame_resized, str(i), (x-4, y-4), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1) # Draw label text
      
-                frame_resized = draw_lines(keypoint_positions, frame_resized, drop_pts)
-                time.sleep(3)
+            
 
                 # Draw framerate in corner of frame - remove for small image display
                 #cv2.putText(frame,'FPS: {0:.2f}'.format(frame_rate_calc),(30,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,0),2,cv2.LINE_AA)
@@ -438,10 +437,15 @@ try:
     
                 # save image with time stamp to directory
                 path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
+                
 
                 # if playingPhone == True:
                 #     print (playingPhone)
                 #     status = cv2.imwrite(path, frame_resized)
+
+                frame_resized = draw_lines(keypoint_positions, frame_resized, drop_pts)
+                time.sleep(3)
+
 
                 # Press 'q' to quit
                 if cv2.waitKey(1) == ord('q'):
