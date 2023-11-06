@@ -321,6 +321,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
     if leftArmAngle <= 20 or rightArmAngle <= 20:
         pygame.mixer.init()
         pygame.mixer.music.load("myFile.wav")
+        pygame.mixer.music.play()
         # global frequency1, frequency2, frequency3
         # frequency1, frequency2, frequency3 = chords_list[0][0],chords_list[0][1],chords_list[0][2]
     
