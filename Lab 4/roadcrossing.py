@@ -326,7 +326,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
         game_over_sound = pygame.mixer.Sound('myFile.wav')
         pygame.mixer.Sound.set_volume(game_over_sound, 5)
         game_over_sound.play()
-        while (pygame.mixer.music.get_busy()):
+        while (game_over_sound.get_busy()):
             time.sleep(10)
         # if pygame.mixer.music.get_busy() == True:
         #     # print (pygame.mixer.music.get_busy())
