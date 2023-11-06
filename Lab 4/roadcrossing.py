@@ -325,14 +325,14 @@ def draw_lines(keypoints, imageCV, bad_pts):
         # frequency1, frequency2, frequency3 = chords_list[0][0],chords_list[0][1],chords_list[0][2]
     
 
-    t = np.arange(int(sr * change_interval)) / sr  # Generate a time vector for one second
-    y1 = A * np.sin(2 * np.pi * frequency1 * t + phi).astype('float32')
-    y2 = A * np.sin(2 * np.pi * frequency2 * t + phi).astype('float32')
-    y3 = A * np.sin(2 * np.pi * frequency3 * t + phi).astype('float32')
-    # Add the three signals together
-    y = (y1 + y2 + y3) / 3  # Adjust the scaling factor for desired volume balance
+    # t = np.arange(int(sr * change_interval)) / sr  # Generate a time vector for one second
+    # y1 = A * np.sin(2 * np.pi * frequency1 * t + phi).astype('float32')
+    # y2 = A * np.sin(2 * np.pi * frequency2 * t + phi).astype('float32')
+    # y3 = A * np.sin(2 * np.pi * frequency3 * t + phi).astype('float32')
+    # # Add the three signals together
+    # y = (y1 + y2 + y3) / 3  # Adjust the scaling factor for desired volume balance
 
-    sd_stream.write(y)
+    # sd_stream.write(y)
 
 
 #     draw.rectangle((0, 0, width, height), outline=0, fill=400)
