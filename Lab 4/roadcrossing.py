@@ -325,6 +325,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
     global image
     global width
     global height
+    global disp
     """connect important body part keypoints with lines"""
     # 5	leftShoulder
     # 6	rightShoulder
@@ -357,20 +358,20 @@ def draw_lines(keypoints, imageCV, bad_pts):
         backlight.value = True
         # Scale the image to the smaller screen dimension
         image_ratio = image.width / image.height
-        screen_ratio = width / height
+        screen_ratio = disp.width / disp.height
         if screen_ratio < image_ratio:
-            scaled_width = image.width * height // image.height
-            scaled_height = height
+            scaled_width = image.width * disp.height // image.height
+            scaled_height = disp.height
         else:
-            scaled_width = width
-            scaled_height = image.height * width // image.width
+            scaled_width = disp.width
+            scaled_height = image.height * disp.width // image.width
         image = image.resize((int(0.5*scaled_width), int(0.5*scaled_height)), Image.BICUBIC)
 
 
         # Crop and center the image
-        x = scaled_width // 2 - width // 2
-        y = scaled_height // 2 - height // 2
-        image = image.crop((x, y, x + width, y + height))
+        x = scaled_width // 2 - disp.width // 2
+        y = scaled_height // 2 - disp.height // 2
+        image = image.crop((x, y, x + disp.width, y + disp.height))
 
         disp.image(image)
         # game_over_sound.play()
