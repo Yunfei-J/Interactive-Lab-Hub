@@ -320,6 +320,7 @@ def get_offsets(output_details, coords, num_key_points=17):
 def draw_lines(keypoints, imageCV, bad_pts):
     global game_over_sound
     global playingPhone
+    global image
     """connect important body part keypoints with lines"""
     # 5	leftShoulder
     # 6	rightShoulder
