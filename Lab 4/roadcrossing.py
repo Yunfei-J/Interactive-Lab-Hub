@@ -319,6 +319,7 @@ def get_offsets(output_details, coords, num_key_points=17):
         offset_vectors = np.vstack((offset_vectors, get_offset_point(heatmap_y, heatmap_x, offsets, i, num_key_points)))  
     return offset_vectors
 
+initial_time = int(time.time()) #frame of reference in seconds
 def delta_sleep(s):
     """
     Parameters:
@@ -331,7 +332,7 @@ def delta_sleep(s):
         # find time needed to sleep to reach the specified param 's'
         needed_sleep = (initial_time+s) - int(time.time())
         time.sleep(needed_sleep)
-        
+
 def draw_lines(keypoints, imageCV, bad_pts):
     global game_over_sound
     global playingPhone
