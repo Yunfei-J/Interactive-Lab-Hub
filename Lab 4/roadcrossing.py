@@ -369,7 +369,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
         status = cv2.imwrite(path, frame_resized)
         
         image = Image.open(path) 
-        image = cv2.resize(image,(135,240))
+        if image is not None:
+            image = cv2.resize(image,(135,240))
         backlight = digitalio.DigitalInOut(board.D22)
         backlight.switch_to_output()
         backlight.value = True
