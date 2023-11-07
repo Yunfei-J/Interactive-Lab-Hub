@@ -321,6 +321,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
     global game_over_sound
     global playingPhone
     global image
+    global width
+    global height
     """connect important body part keypoints with lines"""
     # 5	leftShoulder
     # 6	rightShoulder
