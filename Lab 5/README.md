@@ -173,5 +173,6 @@ During the lecture, we mentioned questions to help characterize a material:
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
+https://github.com/Yunfei-J/Interactive-Lab-Hub/blob/Fall2023/Lab%204/roadcrossing.py
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
