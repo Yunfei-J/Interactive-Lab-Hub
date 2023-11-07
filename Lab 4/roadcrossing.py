@@ -106,7 +106,6 @@ image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
 
-
 # Draw a black filled box to clear the image.
 # draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 # disp.image(image, rotation)
@@ -341,6 +340,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
     global width
     global height
     global disp
+    rotation = 90
+
     """connect important body part keypoints with lines"""
     # 5	leftShoulder
     # 6	rightShoulder
@@ -388,7 +389,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
         y = scaled_height // 2 - disp.height // 2
         image = image.crop((x, y, x + disp.width, y + disp.height))
 
-        disp.image(image)
+        disp.image(image,rotation)
         # image.paste(image,(0,0))
         # delta_sleep(1)
         time.sleep(1)
