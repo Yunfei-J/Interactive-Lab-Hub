@@ -151,6 +151,8 @@ game_over_sound = pygame.mixer.Sound('myFile.wav')
 pygame.mixer.Sound.set_volume(game_over_sound, 0)
 game_over_sound.play(loops=-1)
 
+
+print("running")
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
 # Source - Adrian Rosebrock, PyImageSearch: https://www.pyimagesearch.com/2015/12/28/increasing-raspberry-pi-fps-with-python-and-opencv/
 class VideoStream:
