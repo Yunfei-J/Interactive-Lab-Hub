@@ -52,8 +52,14 @@ import subprocess
 import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
-import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
+from adafruit_rgb_display.rgb import color565
+import adafruit_rgb_display.ili9341 as ili9341
+import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
+import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
+import adafruit_rgb_display.st7735 as st7735  # pylint: disable=unused-import
+import adafruit_rgb_display.ssd1351 as ssd1351  # pylint: disable=unused-import
+import adafruit_rgb_display.ssd1331 as ssd1331  # pylint: disable=unused-import
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -328,6 +334,28 @@ def draw_lines(keypoints, imageCV, bad_pts):
         playingPhone == True
         print (playingPhone)
         status = cv2.imwrite(path, frame_resized)
+        image = Image.open(path) 
+        backlight = digitalio.DigitalInOut(board.D22)
+        backlight.switch_to_output()
+        backlight.value = True
+        # Scale the image to the smaller screen dimension
+        image_ratio = image.width / image.height
+        screen_ratio = width / height
+        if screen_ratio < image_ratio:
+            scaled_width = image.width * height // image.height
+            scaled_height = height
+        else:
+            scaled_width = width
+            scaled_height = image.height * width // image.width
+        image = image.resize((int(0.5*scaled_width), int(0.5*scaled_height)), Image.BICUBIC)
+
+
+        # Crop and center the image
+        x = scaled_width // 2 - width // 2
+        y = scaled_height // 2 - height // 2
+        image = image.crop((x, y, x + width, y + height))
+
+        disp.image(image)
         # game_over_sound.play()
         # if game_over_sound.get_busy() == True:
         # game_over_sound = pygame.mixer.Sound('myFile.wav')
