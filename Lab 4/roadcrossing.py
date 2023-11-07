@@ -105,23 +105,6 @@ image = Image.new("RGB", (width, height))
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
 
-# Scale the image to the smaller screen dimension
-image_ratio = image.width / image.height
-screen_ratio = width / height
-if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image.height * width // image.width
-image = image.resize((int(0.5*scaled_width), int(0.5*scaled_height)), Image.BICUBIC)
-
-
-# Crop and center the image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image = image.crop((x, y, x + width, y + height))
-
 
 
 # Draw a black filled box to clear the image.
@@ -369,27 +352,25 @@ def draw_lines(keypoints, imageCV, bad_pts):
         status = cv2.imwrite(path, frame_resized)
         
         image = Image.open(path) 
-        if image is not None:
-            image = cv2.resize(image,(135,240))
         backlight = digitalio.DigitalInOut(board.D22)
         backlight.switch_to_output()
         backlight.value = True
-        # # Scale the image to the smaller screen dimension
-        # image_ratio = image.width / image.height
-        # screen_ratio = width / height
-        # if screen_ratio < image_ratio:
-        #     scaled_width = image.width * height // image.height
-        #     scaled_height = height
-        # else:
-        #     scaled_width = width
-        #     scaled_height = image.height * width // image.width
-        # image = image.resize((int(0.5*scaled_width), int(0.5*scaled_height)), Image.BICUBIC)
+        # Scale the image to the smaller screen dimension
+        image_ratio = image.width / image.height
+        screen_ratio = width / height
+        if screen_ratio < image_ratio:
+            scaled_width = image.width * height // image.height
+            scaled_height = height
+        else:
+            scaled_width = width
+            scaled_height = image.height * width // image.width
+        image = image.resize((int(0.5*scaled_width), int(0.5*scaled_height)), Image.BICUBIC)
 
 
-        # # Crop and center the image
-        # x = scaled_width // 2 - width // 2
-        # y = scaled_height // 2 - height // 2
-        # image = image.crop((x, y, x + width, y + height))
+        # Crop and center the image
+        x = scaled_width // 2 - width // 2
+        y = scaled_height // 2 - height // 2
+        image = image.crop((x, y, x + width, y + height))
 
         disp.image(image)
         # game_over_sound.play()
