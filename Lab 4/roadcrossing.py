@@ -374,7 +374,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
         image = image.crop((x, y, x + disp.width, y + disp.height))
 
         # disp.image(image)
-        image.paste(image)
+        image.paste(image,(0,0))
     else:
         pygame.mixer.Sound.set_volume(game_over_sound, 0)
         playingPhone == False
