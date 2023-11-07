@@ -485,6 +485,8 @@ try:
                 path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
                 
 
+                if image!= None:
+                    disp.image(image)
                 # if playingPhone == True:
                 #     print (playingPhone)
                 #     status = cv2.imwrite(path, frame_resized)
