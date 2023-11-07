@@ -152,7 +152,6 @@ pygame.mixer.Sound.set_volume(game_over_sound, 0)
 game_over_sound.play(loops=-1)
 
 
-print("running")
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
 # Source - Adrian Rosebrock, PyImageSearch: https://www.pyimagesearch.com/2015/12/28/increasing-raspberry-pi-fps-with-python-and-opencv/
 class VideoStream:
@@ -353,13 +352,13 @@ def draw_lines(keypoints, imageCV, bad_pts):
     rightArmAngle = abs(keypoints[10][1]-keypoints[8][1])/abs(keypoints[10][1]-keypoints[6][1])
 
     print(leftArmAngle,rightArmAngle)
-    # # play sound
-    change_interval = 2  # seconds
-    next_change_time = time.time() + change_interval
-    # time.sleep(3)
+    # # # play sound
+    # change_interval = 2  # seconds
+    # next_change_time = time.time() + change_interval
+    # # time.sleep(3)
     
-    next_change_time += change_interval
-    chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
+    # next_change_time += change_interval
+    # chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
 
     
     if leftArmAngle <= 0.3 or rightArmAngle <= 0.3:
@@ -369,9 +368,9 @@ def draw_lines(keypoints, imageCV, bad_pts):
         status = cv2.imwrite(path, frame_resized)
         
         image = Image.open(path) 
-        backlight = digitalio.DigitalInOut(board.D22)
-        backlight.switch_to_output()
-        backlight.value = True
+        # backlight = digitalio.DigitalInOut(board.D22)
+        # backlight.switch_to_output()
+        # backlight.value = True
         # Scale the image to the smaller screen dimension
         image_ratio = image.width / image.height
         screen_ratio = disp.width / disp.height
