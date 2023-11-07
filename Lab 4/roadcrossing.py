@@ -390,7 +390,7 @@ def draw_lines(keypoints, imageCV, bad_pts):
 
         disp.image(image)
         # image.paste(image,(0,0))
-        # delta_sleep(1)
+        delta_sleep(10)
         time.sleep(1)
 
     else:
