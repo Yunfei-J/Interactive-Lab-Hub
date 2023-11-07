@@ -179,3 +179,5 @@ Using PoseNet, we detect pedestrians that are playing phones when crossing the r
 File: roadcrossing.py
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+[![Lab 5b](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/lab5b_cover.png)](https://drive.google.com/file/d/1FIWTzrPfg0bprHQVZVwdyvHqLspnIpyu/view?usp=sharing)
+
