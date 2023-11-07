@@ -388,9 +388,10 @@ def draw_lines(keypoints, imageCV, bad_pts):
         y = scaled_height // 2 - disp.height // 2
         image = image.crop((x, y, x + disp.width, y + disp.height))
 
-        # disp.image(image)
-        image.paste(image,(0,0))
-        delta_sleep(1)
+        disp.image(image)
+        # image.paste(image,(0,0))
+        # delta_sleep(1)
+        time.sleep(1)
 
     else:
         pygame.mixer.Sound.set_volume(game_over_sound, 0)
