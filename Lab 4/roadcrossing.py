@@ -373,10 +373,8 @@ def draw_lines(keypoints, imageCV, bad_pts):
         y = scaled_height // 2 - disp.height // 2
         image = image.crop((x, y, x + disp.width, y + disp.height))
 
-        disp.image(image)
-        # game_over_sound.play()
-        # if game_over_sound.get_busy() == True:
-        # game_over_sound = pygame.mixer.Sound('myFile.wav')
+        # disp.image(image)
+        image.paste(image)
     else:
         pygame.mixer.Sound.set_volume(game_over_sound, 0)
         playingPhone == False
@@ -483,14 +481,8 @@ try:
     
                 # save image with time stamp to directory
                 path = str(outdir) + '/'  + str(datetime.datetime.now()) + ".jpg"
-                
-
-                if image!= None:
-                    disp.image(image)
-                # if playingPhone == True:
-                #     print (playingPhone)
-                #     status = cv2.imwrite(path, frame_resized)
-
+               
+            
                 frame_resized = draw_lines(keypoint_positions, frame_resized, drop_pts)
                 time.sleep(3)
 
