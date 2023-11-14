@@ -48,8 +48,8 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
-height =  disp.height
-width = disp.width 
+height = disp.height
+width = disp.width
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
@@ -60,57 +60,59 @@ sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 sensor.enable_color = True
 r, g, b, a = sensor.color_data
 color = tuple(
-        map(lambda x: int(255 * (1 - (a / 65536)) * 255 * (x / 65536)), [r, g, b, a])
-    )
+    map(lambda x: int(255 * (1 - (a / 65536)) * 255 * (x / 65536)), [r, g, b, a])
+)
 
-topic = 'IDD/colors'
+topic = "IDD/colors"
 
 
-#this is the callback that gets called once we connect to the broker. 
-#we should add our subscribe functions here as well
+# this is the callback that gets called once we connect to the broker.
+# we should add our subscribe functions here as well
 def on_connect(client, userdata, flags, rc):
-	print(f"connected with result code {rc}")
-	client.subscribe(topic)
-    draw.rectangle((0, height*0.5, width, height), fill=color[:3])
+    print(f"connected with result code {rc}")
+    client.subscribe(topic)
+    draw.rectangle((0, height * 0.5, width, height), fill=color[:3])
     disp.image(image)
-    time.sleep(.01)
-	# you can subsribe to as many topics as you'd like
-	# client.subscribe('some/other/topic')
+    time.sleep(0.01)
+
+
+# you can subsribe to as many topics as you'd like
+# client.subscribe('some/other/topic')
+
 
 def on_message(client, userdata, msg):
     print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
-        colors = list(map(int, msg.payload.decode('UTF-8').split(',')))
-        draw.rectangle((0, 0, width, height*0.5), fill=color)
+        colors = list(map(int, msg.payload.decode("UTF-8").split(",")))
+        draw.rectangle((0, 0, width, height * 0.5), fill=color)
         disp.image(image)
 
 
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set(cert_reqs=ssl.CERT_NONE)
-client.username_pw_set('idd', 'device@theFarm')
+client.username_pw_set("idd", "device@theFarm")
 # client.on_connect = on_connect
 # client.on_message = on_message
 
-client.connect(
-    'farlab.infosci.cornell.edu',
-    port=8883)
+client.connect("farlab.infosci.cornell.edu", port=8883)
 
 client.loop_start()
 
+
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
-    print('exit gracefully')
+    print("exit gracefully")
     client.loop_stop()
-    exit (0)
+    exit(0)
+
 
 # hen sigint happens, do the handler callback function
 signal.signal(signal.SIGINT, handler)
 
 
-
 # the # wildcard means we subscribe to all subtopics of IDD
-topic = 'IDD/#'
+topic = "IDD/#"
 
 
 # Every client needs a random ID
@@ -118,20 +120,15 @@ client = mqtt.Client(str(uuid.uuid1()))
 # configure network encryption etc
 client.tls_set(cert_reqs=ssl.CERT_NONE)
 # this is the username and pw we have setup for the class
-client.username_pw_set('idd', 'device@theFarm')
+client.username_pw_set("idd", "device@theFarm")
 
 # attach out callbacks to the client
 client.on_connect = on_connect
 client.on_message = on_message
 
-#connect to the broker
-client.connect(
-    'farlab.infosci.cornell.edu',
-    port=8883)
+# connect to the broker
+client.connect("farlab.infosci.cornell.edu", port=8883)
 
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 client.loop_forever()
-
-
-
