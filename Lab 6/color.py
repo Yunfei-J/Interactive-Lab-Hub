@@ -44,8 +44,8 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
-height =  disp.height
-width = disp.width 
+height = disp.height
+width = disp.width
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
@@ -56,36 +56,39 @@ sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 sensor.enable_color = True
 r, g, b, a = sensor.color_data
 
-topic = 'IDD/colors'
+topic = "IDD/colors"
+
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
 
+
 def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
-        colors = list(map(int, msg.payload.decode('UTF-8').split(',')))
-        draw.rectangle((0, 0, width, height*0.5), fill=color)
+        colors = list(map(int, msg.payload.decode("UTF-8").split(",")))
+        draw.rectangle((0, 0, width, height * 0.5), fill=color)
         disp.image(image)
+
 
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set(cert_reqs=ssl.CERT_NONE)
-client.username_pw_set('idd', 'device@theFarm')
+client.username_pw_set("idd", "device@theFarm")
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect(
-    'farlab.infosci.cornell.edu',
-    port=8883)
+client.connect("farlab.infosci.cornell.edu", port=8883)
 
 client.loop_start()
 
+
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
-    print('exit gracefully')
+    print("exit gracefully")
     client.loop_stop()
-    exit (0)
+    exit(0)
+
 
 # hen sigint happens, do the handler callback function
 signal.signal(signal.SIGINT, handler)
@@ -93,19 +96,21 @@ signal.signal(signal.SIGINT, handler)
 # our main loop
 while True:
     r, g, b, a = sensor.color_data
-    
-    # there's a few things going on here 
+
+    # there's a few things going on here
     # colors are reported at 16bits (thats 65536 levels per color).
     # we need to convert that to 0-255. thats what the 255*(x/65536) is doing
     # color are also reported with an alpha (opacity, or in our case a proxy for ambient brightness)
-    # 255*(1-(a/65536)) acts as scaling factor for brightness, it worked well enough in the lab but 
+    # 255*(1-(a/65536)) acts as scaling factor for brightness, it worked well enough in the lab but
     # your success may vary depenging on how much ambient light there is, you can mess with these constants
-    color =tuple(map(lambda x: int(255*(1-(a/65536))*255*(x/65536)) , [r,g,b,a]))
+    color = tuple(
+        map(lambda x: int(255 * (1 - (a / 65536)) * 255 * (x / 65536)), [r, g, b, a])
+    )
 
     # if we press the button, send msg to cahnge everyones color
     if not buttonA.value:
         client.publish(topic, f"{r},{g},{b}")
-    draw.rectangle((0, height*0.5, width, height), fill=color[:3])
+    # draw.rectangle((0, height*0.5, width, height), fill=color[:3])
+    draw.rectangle((0, height * 0.5, width, height), fill=[0, 0, 0])
     disp.image(image)
-    time.sleep(.01)
-    
+    time.sleep(0.01)
