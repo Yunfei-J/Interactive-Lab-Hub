@@ -62,16 +62,27 @@ r, g, b, a = sensor.color_data
 
 topic = 'IDD/colors'
 
-def on_connect(client, userdata, flags, rc):
-    print(f"connected with result code {rc}")
-    client.subscribe(topic)
 
-def on_message(cleint, userdata, msg):
+#this is the callback that gets called once we connect to the broker. 
+#we should add our subscribe functions here as well
+def on_connect(client, userdata, flags, rc):
+	print(f"connected with result code {rc}")
+	client.subscribe(topic)
+
+    draw.rectangle((0, height*0.5, width, height), fill=color[:3])
+    disp.image(image)
+    time.sleep(.01)
+	# you can subsribe to as many topics as you'd like
+	# client.subscribe('some/other/topic')
+
+def on_message(client, userdata, msg):
+    print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
         colors = list(map(int, msg.payload.decode('UTF-8').split(',')))
         draw.rectangle((0, 0, width, height*0.5), fill=color)
         disp.image(image)
+
 
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set(cert_reqs=ssl.CERT_NONE)
@@ -98,31 +109,6 @@ signal.signal(signal.SIGINT, handler)
 
 # the # wildcard means we subscribe to all subtopics of IDD
 topic = 'IDD/#'
-
-# some other examples
-# topic = 'IDD/a/fun/topic'
-
-#this is the callback that gets called once we connect to the broker. 
-#we should add our subscribe functions here as well
-def on_connect(client, userdata, flags, rc):
-	print(f"connected with result code {rc}")
-	client.subscribe(topic)
-	# you can subsribe to as many topics as you'd like
-	# client.subscribe('some/other/topic')
-
-
-# this is the callback that gets called each time a message is received
-def on_message(client, userdata, msg):
-	print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
-	# you can filter by topics
-	# if msg.topic == 'IDD/some/other/topic': do thing
-	color =tuple(map(lambda x: int(255*(1-(a/65536))*255*(x/65536)) , [r,g,b,a]))
-
-	if not buttonA.value:
-        client.publish(topic, f"{r},{g},{b}")
-	draw.rectangle((0, height*0.5, width, height), fill=color[:3])
-	disp.image(image)
-    time.sleep(.01)
 
 
 # Every client needs a random ID
