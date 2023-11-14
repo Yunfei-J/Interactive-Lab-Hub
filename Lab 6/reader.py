@@ -59,6 +59,9 @@ sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 
 sensor.enable_color = True
 r, g, b, a = sensor.color_data
+color = tuple(
+        map(lambda x: int(255 * (1 - (a / 65536)) * 255 * (x / 65536)), [r, g, b, a])
+    )
 
 topic = 'IDD/colors'
 
