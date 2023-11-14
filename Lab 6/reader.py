@@ -71,7 +71,6 @@ topic = 'IDD/colors'
 def on_connect(client, userdata, flags, rc):
 	print(f"connected with result code {rc}")
 	client.subscribe(topic)
-
     draw.rectangle((0, height*0.5, width, height), fill=color[:3])
     disp.image(image)
     time.sleep(.01)
