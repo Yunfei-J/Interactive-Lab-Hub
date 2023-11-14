@@ -1,6 +1,7 @@
 # Little Interactions Everywhere
 
 **NAMES OF COLLABORATORS HERE**
+
 Yunfei Jiao
 
 Jamie Wang
