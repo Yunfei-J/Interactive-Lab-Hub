@@ -111,6 +111,6 @@ while True:
     if not buttonA.value:
         client.publish(topic, f"{r},{g},{b}")
     # draw.rectangle((0, height*0.5, width, height), fill=color[:3])
-    draw.rectangle((0, height * 0.5, width, height), fill=(255, 255, 255))
+    draw.rectangle((0, height * 0.5, width, height), fill=(0, 0, 0))
     disp.image(image)
     time.sleep(0.01)
