@@ -133,3 +133,7 @@ client.connect("farlab.infosci.cornell.edu", port=8883)
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 client.loop_forever()
+
+
+while True:
+    r, g, b, a = sensor.color_data
