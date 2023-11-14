@@ -84,7 +84,8 @@ def on_message(client, userdata, msg):
     print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
-        colors = list(map(int, msg.payload.decode("UTF-8").split(",")))
+        colors = tuple(map(int, msg.payload.decode("UTF-8").split(",")))
+        print(colors)
         draw.rectangle((0, 0, width, height * 0.5), fill=colors)
         disp.image(image)
 
