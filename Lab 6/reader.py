@@ -87,8 +87,8 @@ def on_message(client, userdata, msg):
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set(cert_reqs=ssl.CERT_NONE)
 client.username_pw_set('idd', 'device@theFarm')
-client.on_connect = on_connect
-client.on_message = on_message
+# client.on_connect = on_connect
+# client.on_message = on_message
 
 client.connect(
     'farlab.infosci.cornell.edu',
@@ -133,17 +133,3 @@ client.loop_forever()
 
 
 
-# our main loop
-# while True:
-    # r, g, b, a = sensor.color_data
-	
-
-    # color =tuple(map(lambda x: int(255*(1-(a/65536))*255*(x/65536)) , [r,g,b,a]))
-
-    # # if we press the button, send msg to cahnge everyones color
-    # if not buttonA.value:
-    #     client.publish(topic, f"{r},{g},{b}")
-    # draw.rectangle((0, height*0.5, width, height), fill=color[:3])
-    # disp.image(image)
-    # time.sleep(.01)
-    
