@@ -8,9 +8,7 @@ import board
 from adafruit_seesaw import seesaw, rotaryio, digitalio, neopixel
 
 i2c = board.I2C()  # uses board.SCL and board.SDA
-i2c = (
-    board.STEMMA_I2C()
-)  # For using the built-in STEMMA QT connector on a microcontroller
+# i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 
 qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)
 qt_enc2 = seesaw.Seesaw(i2c, addr=0x37)
@@ -57,9 +55,9 @@ while True:
         pixel1.brightness = 0.2
         print("Button 1 released")
 
-    # if position2 != last_position2:
-    #     last_position2 = position2
-    #     print("Position 2: {}".format(position2))
+    if position2 != last_position2:
+        last_position2 = position2
+        print("Position 2: {}".format(position2))
 
     if not button2.value and not button_held2:
         button_held2 = True
