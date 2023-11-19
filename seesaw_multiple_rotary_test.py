@@ -24,7 +24,7 @@ button2 = digitalio.DigitalIO(qt_enc2, 24)
 button_held2 = False
 
 qt_enc3.pin_mode(24, qt_enc3.INPUT_PULLUP)
-button3 = digitalio.DigitalIO(qt_enc2, 24)
+button3 = digitalio.DigitalIO(qt_enc3, 24)
 button_held3 = False
 
 qt_enc4.pin_mode(24, qt_enc4.INPUT_PULLUP)
