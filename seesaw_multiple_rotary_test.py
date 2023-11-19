@@ -57,9 +57,9 @@ while True:
         pixel1.brightness = 0.2
         print("Button 1 released")
 
-    if position2 != last_position2:
-        last_position2 = position2
-        print("Position 2: {}".format(position2))
+    # if position2 != last_position2:
+    #     last_position2 = position2
+    #     print("Position 2: {}".format(position2))
 
     if not button2.value and not button_held2:
         button_held2 = True
