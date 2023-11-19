@@ -12,6 +12,8 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 
 qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)
 qt_enc2 = seesaw.Seesaw(i2c, addr=0x3C)
+qt_enc3 = seesaw.Seesaw(i2c, addr=0x3A)
+qt_enc4 = seesaw.Seesaw(i2c, addr=0x38)
 
 qt_enc1.pin_mode(24, qt_enc1.INPUT_PULLUP)
 button1 = digitalio.DigitalIO(qt_enc1, 24)
@@ -21,11 +23,25 @@ qt_enc2.pin_mode(24, qt_enc2.INPUT_PULLUP)
 button2 = digitalio.DigitalIO(qt_enc2, 24)
 button_held2 = False
 
+qt_enc3.pin_mode(24, qt_enc3.INPUT_PULLUP)
+button3 = digitalio.DigitalIO(qt_enc2, 24)
+button_held3 = False
+
+qt_enc4.pin_mode(24, qt_enc4.INPUT_PULLUP)
+button4 = digitalio.DigitalIO(qt_enc4, 24)
+button_held4 = False
+
 encoder1 = rotaryio.IncrementalEncoder(qt_enc1)
 last_position1 = None
 
 encoder2 = rotaryio.IncrementalEncoder(qt_enc2)
 last_position2 = None
+
+encoder3 = rotaryio.IncrementalEncoder(qt_enc3)
+last_position3 = None
+
+encoder4 = rotaryio.IncrementalEncoder(qt_enc4)
+last_position4 = None
 
 pixel1 = neopixel.NeoPixel(qt_enc1, 6, 1)
 pixel1.brightness = 0.2
@@ -35,11 +51,20 @@ pixel2 = neopixel.NeoPixel(qt_enc2, 6, 1)
 pixel2.brightness = 0.2
 pixel2.fill(0x0000FF)
 
+pixel3 = neopixel.NeoPixel(qt_enc3, 6, 1)
+pixel3.brightness = 0.2
+pixel3.fill(0x00FF00)
+
+pixel4 = neopixel.NeoPixel(qt_enc4, 6, 1)
+pixel4.brightness = 0.2
+pixel4.fill(0x00FF00)
 
 while True:
     # negate the position to make clockwise rotation positive
     position1 = -encoder1.position
     position2 = -encoder2.position
+    position3 = -encoder3.position
+    position4 = -encoder4.position
 
     if position1 != last_position1:
         last_position1 = position1
@@ -68,3 +93,31 @@ while True:
         button_held2 = False
         pixel2.brightness = 0.2
         print("Button 2 released")
+
+    if position3 != last_position3:
+        last_position3 = position3
+        print("Position 3: {}".format(position3))
+
+    if not button3.value and not button_held2:
+        button_held3 = True
+        pixel3.brightness = 0.5
+        print("Button 3 pressed")
+
+    if button3.value and button_held3:
+        button_held3 = False
+        pixel3.brightness = 0.2
+        print("Button 3 released")
+
+    if position4 != last_position4:
+        last_position4 = position4
+        print("Position 4: {}".format(position4))
+
+    if not button4.value and not button_held4:
+        button_held4 = True
+        pixel4.brightness = 0.5
+        print("Button 4 pressed")
+
+    if button4.value and button_held4:
+        button_held4 = False
+        pixel4.brightness = 0.2
+        print("Button 4 released")
