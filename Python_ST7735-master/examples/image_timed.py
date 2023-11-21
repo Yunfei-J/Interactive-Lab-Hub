@@ -64,7 +64,7 @@ disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=160, height=80)
 
 
 # Initialize display.
-disp.begin()
+# disp.begin()
 
 # Load an image.
 print("Loading image...")
