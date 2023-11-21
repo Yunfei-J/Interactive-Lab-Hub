@@ -78,7 +78,13 @@ while True:
     # Draw the image on the display hardware.
     print("Drawing image")
     start_time = time.time()
-    disp.display(image)
+
+    # Load an image
+    image = Image.open("path/to/your/image.jpg")
+    # Display the image on the screen
+    disp.image(image)
+
+    # disp.display(image)
     end_time = time.time()
     print("Time to draw image: " + str(end_time - start_time))
     disp.clear((0, 0, 0))
