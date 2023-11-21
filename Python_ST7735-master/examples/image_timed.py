@@ -126,5 +126,5 @@ try:
 except KeyboardInterrupt:
     print("\nExiting...")
 finally:
-    # Clean up and close the display
-    disp.deinit()
+    # Reset the display (use this instead of deinit)
+    disp.reset()
