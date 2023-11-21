@@ -81,6 +81,9 @@ while True:
 
     # Load an image
     image = Image.open("cat.jpg")
+    # Resize the image and rotate it so matches the display.
+    image = image.rotate(90).resize((WIDTH, HEIGHT))
+
     # Display the image on the screen
     disp.image(image)
 
