@@ -92,7 +92,7 @@
 #     disp.image(image)
 
 
-from PIL import Image
+from PIL import Image, ImageDraw
 import time
 import board
 import digitalio
@@ -111,8 +111,21 @@ disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=WIDTH, height=HE
 try:
     print("Press Ctrl-C to exit")
     while True:
-        # Load and resize a simple image (replace with your image path)
-        image = Image.new("RGB", (WIDTH, HEIGHT), color=(255, 0, 0))  # Red image
+        # Create a blank image
+        image = Image.new("RGB", (WIDTH, HEIGHT), color=(0, 0, 0))
+        draw = ImageDraw.Draw(image)
+
+        # Draw a red square in the center
+        square_size = 20
+        draw.rectangle(
+            (
+                WIDTH // 2 - square_size // 2,
+                HEIGHT // 2 - square_size // 2,
+                WIDTH // 2 + square_size // 2,
+                HEIGHT // 2 + square_size // 2,
+            ),
+            fill=(255, 0, 0),
+        )
 
         # Display the image on the screen
         disp.image(image)
