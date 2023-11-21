@@ -20,9 +20,11 @@
 # THE SOFTWARE.
 from PIL import Image
 import time
-import st7735 as TFT
+
+# import st7735 as TFT
 import Adafruit_GPIO as GPIO
-import Adafruit_GPIO.SPI as SPI
+
+# import Adafruit_GPIO.SPI as SPI
 
 
 WIDTH = 128
@@ -30,11 +32,11 @@ HEIGHT = 160
 SPEED_HZ = 4000000
 
 
-# Raspberry Pi configuration.
-DC = 24
-RST = 25
-SPI_PORT = 0
-SPI_DEVICE = 0
+# # Raspberry Pi configuration.
+# DC = 24
+# RST = 25
+# SPI_PORT = 0
+# SPI_DEVICE = 0
 
 # BeagleBone Black configuration.
 # DC = 'P9_15'
@@ -42,10 +44,24 @@ SPI_DEVICE = 0
 # SPI_PORT = 1
 # SPI_DEVICE = 0
 
-# Create TFT LCD display class.
-disp = TFT.ST7735(
-    DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=SPEED_HZ)
-)
+# # Create TFT LCD display class.
+# disp = TFT.ST7735(
+#     DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=SPEED_HZ)
+# )
+
+import board
+import digitalio
+import adafruit_rgb_display.st7735 as TFT
+
+# ...
+
+spi = board.SPI()
+tft_cs = digitalio.DigitalInOut(board.CE0)
+tft_dc = digitalio.DigitalInOut(board.D25)
+tft_res = None
+
+disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=160, height=80)
+
 
 # Initialize display.
 disp.begin()
