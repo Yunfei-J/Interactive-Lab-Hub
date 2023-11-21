@@ -104,7 +104,7 @@ HEIGHT = 80
 spi = board.SPI()
 tft_cs = digitalio.DigitalInOut(board.CE0)
 tft_dc = digitalio.DigitalInOut(board.D25)
-tft_res = None
+tft_res = digitalio.DigitalInOut(board.D24)  # Connect the reset pin to GPIO 24
 
 disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=WIDTH, height=HEIGHT)
 
@@ -126,5 +126,5 @@ try:
 except KeyboardInterrupt:
     print("\nExiting...")
 finally:
-    # Reset the display (use this instead of deinit)
+    # Reset the display
     disp.reset()
