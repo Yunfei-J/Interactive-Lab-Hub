@@ -60,7 +60,7 @@ tft_cs = digitalio.DigitalInOut(board.CE0)
 tft_dc = digitalio.DigitalInOut(board.D25)
 tft_res = None
 
-disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=160, height=80)
+disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=1600, height=800)
 
 
 # Initialize display.
