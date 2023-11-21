@@ -87,5 +87,8 @@ while True:
     # disp.display(image)
     end_time = time.time()
     print("Time to draw image: " + str(end_time - start_time))
-    disp.clear((0, 0, 0))
+    # disp.clear((0, 0, 0))
+
+    # Clear the display by filling it with a specified color (e.g., black)
+    disp.fill(0)  # 0 represents black in RGB
     disp.display()
