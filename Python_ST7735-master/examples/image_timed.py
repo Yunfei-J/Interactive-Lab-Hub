@@ -80,7 +80,7 @@ while True:
     start_time = time.time()
 
     # Load an image
-    image = Image.open("path/to/your/image.jpg")
+    image = Image.open("cat.jpg")
     # Display the image on the screen
     disp.image(image)
 
