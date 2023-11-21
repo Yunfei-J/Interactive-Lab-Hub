@@ -20,7 +20,7 @@
 # THE SOFTWARE.
 from PIL import Image
 import time
-import ST7735 as TFT
+import st7735 as TFT
 import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
@@ -37,37 +37,33 @@ SPI_PORT = 0
 SPI_DEVICE = 0
 
 # BeagleBone Black configuration.
-#DC = 'P9_15'
-#RST = 'P9_12'
-#SPI_PORT = 1
-#SPI_DEVICE = 0
+# DC = 'P9_15'
+# RST = 'P9_12'
+# SPI_PORT = 1
+# SPI_DEVICE = 0
 
 # Create TFT LCD display class.
 disp = TFT.ST7735(
-    DC,
-    rst=RST,
-    spi=SPI.SpiDev(
-        SPI_PORT,
-        SPI_DEVICE,
-        max_speed_hz=SPEED_HZ))
+    DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=SPEED_HZ)
+)
 
 # Initialize display.
 disp.begin()
 
 # Load an image.
-print('Loading image...')
-image = Image.open('cat.jpg')
+print("Loading image...")
+image = Image.open("cat.jpg")
 
 # Resize the image and rotate it so matches the display.
 image = image.rotate(90).resize((WIDTH, HEIGHT))
 
-print('Press Ctrl-C to exit')
-while(True):
+print("Press Ctrl-C to exit")
+while True:
     # Draw the image on the display hardware.
-    print('Drawing image')
+    print("Drawing image")
     start_time = time.time()
     disp.display(image)
     end_time = time.time()
-    print('Time to draw image: ' + str(end_time - start_time))
+    print("Time to draw image: " + str(end_time - start_time))
     disp.clear((0, 0, 0))
     disp.display()
