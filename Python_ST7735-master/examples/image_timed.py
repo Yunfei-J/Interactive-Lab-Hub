@@ -91,4 +91,5 @@ while True:
 
     # Clear the display by filling it with a specified color (e.g., black)
     disp.fill(0)  # 0 represents black in RGB
-    disp.display()
+    # disp.image()
+    disp.image(image)
