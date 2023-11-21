@@ -108,20 +108,14 @@ tft_res = None
 
 disp = TFT.ST7735(spi, cs=tft_cs, dc=tft_dc, rst=tft_res, width=WIDTH, height=HEIGHT)
 
-print("Press Ctrl-C to exit")
-while True:
-    try:
-        print("Drawing image")
-        start_time = time.time()
-
-        # Load and resize the image
-        image = Image.open("cat.jpg").rotate(90).resize((WIDTH, HEIGHT))
+try:
+    print("Press Ctrl-C to exit")
+    while True:
+        # Load and resize a simple image (replace with your image path)
+        image = Image.new("RGB", (WIDTH, HEIGHT), color=(255, 0, 0))  # Red image
 
         # Display the image on the screen
         disp.image(image)
-
-        end_time = time.time()
-        print("Time to draw image: " + str(end_time - start_time))
 
         # Pause for a moment (optional)
         time.sleep(2)
@@ -129,6 +123,8 @@ while True:
         # Clear the display by filling it with a specified color (e.g., black)
         disp.fill(0)
 
-    except KeyboardInterrupt:
-        print("\nExiting...")
-        break
+except KeyboardInterrupt:
+    print("\nExiting...")
+finally:
+    # Clean up and close the display
+    disp.deinit()
