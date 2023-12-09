@@ -1,31 +1,31 @@
-#Project plan: Big idea, timeline, parts needed, fall-back plan.
-Big Idea: The user can set timers,by physical knobs,to control multiple stoves to turn on, turn off, or adjust power
+# Project plan: Big idea, timeline, parts needed, fall-back plan.
+## Big Idea: The user can set timers,by physical knobs,to control multiple stoves to turn on, turn off, or adjust power
 
-Specific Application: A control panel comprising four rotary encoders or joysticks and some LED signal lights is used to set time for individual stove’s action such as turning on, off, or changing power level. To physically rotate the stove knobs, we want to provide the option of remotely controlling a servo motor to do the job for the user.
+## Specific Application: A control panel comprising four rotary encoders or joysticks and some LED signal lights is used to set time for individual stove’s action such as turning on, off, or changing power level. To physically rotate the stove knobs, we want to provide the option of remotely controlling a servo motor to do the job for the user.
 
 Well Done is a stove add-on system that offers an individual timer for each stove to save users from the trouble of keeping track of the cooking time themselves.
 
-Timeline: 
+## Timeline: 
 Nov 14: Set proposal
 Nov 21: Scout for suitable rotary encoders, buttons,  joystick, and LED signal lights. Envision its final appearance on actual stove
 Nov 28 & 30: Code timer-setting program and alert-sending system with MQTT
 Dec 5 & 7: Design and produce costumes for “Well Done”. 
 Dec 14: User-testing and finish write-up
 
-Expected Challenges:
+## Expected Challenges:
 May not find four rotary encoders
 Servo motor may not be powerful enough to turn the knob and if it could do precise turns
 Fall-back plan: 
 use joysticks as substitute for rotary encoders
 Discard the remote knob-turning feature
 
-Contribution Overview:
+## Contribution Overview:
 Together: Scout resources, design costumes
 Jamie: Develop timer-setting program and alert-sending system
 Fei: Develop LED feedback program and produce costume
 
-#Documentation of design process
-Ideation
+# Documentation of design process
+## Ideation
 Storyboard
 Richard is cooking. He is cooking two pots of food at the same time.
 
@@ -38,7 +38,7 @@ He learned about WellDone, a stovetop add-on that can help him time different st
 When the stove is complete cooking, Richard receives a text message informing him that stove No.X is done cooking!
 
 
-Execution
+## Execution
 Program
 Drafted the preliminary design plan: use rotary encoders to register the cooking time that the user wants to assign each of the stoves with. Once the time is up for a stove, a text message will be sent to the user’s phone.
 Implemented individually working count-down timers
@@ -48,7 +48,7 @@ Replaced with a new Pi
 Wrote script to show real-time positions of the rotary encoders, start counting down once the encoder knob is pressed, and display “Done” when the time left hits zero. 
 Improved message readability by adjust their alignment and color 
 
-Device costume
+## Device costume
 Drafted a rough layout of the stovetop in Adobe Illustrator
 
 Measured the dimensions of needed components (e.g. Pi, Pi screen, rotary encoder platform, etc.)
@@ -61,17 +61,17 @@ Vector cut “add-ons”: stoves, knobs
 Raster cut our Logo and names
 Embellished the box surface with reflective silver material
 
-Hardware
+## Hardware
 Soldered the back of Adafruit rotary encoders to modify each’s i2C address
 Connected all parts to MiniPi TFT screen with jumpers as following:
 
 
-#Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
+# Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
 
-#Video of someone using your project
+# Video of someone using your project
 https://drive.google.com/file/d/1V_nF6uEfMx32FJ5AoiEJPgi34Yzn_owL/view?usp=sharing
 
-#Reflections on process (What have you learned or wish you knew at the start?)
+# Reflections on process (What have you learned or wish you knew at the start?)
 More research and thorough initial planning: 
 Screen for display
 Eyespi couldn’t function
@@ -93,7 +93,7 @@ With Pi’s raised interface (ports), it is difficult to have only the screen po
 
 Challenges in 3D printing and fixing the rotary encoder to the board emphasized the critical role of material selection and manufacturing techniques. Early experimentation with materials and prototyping methods could mitigate complications in later stages.The unique architecture of the Raspberry Pi, particularly its raised interface (ports), posed unexpected design challenges. Awareness of device architecture at the project's outset would enable more thoughtful and innovative design solutions, avoiding complexities during implementation.
 
-#Group work distribution questionnaire
+# Group work distribution questionnaire
 Jamie
 Timer logic programming
 Laser Cut
