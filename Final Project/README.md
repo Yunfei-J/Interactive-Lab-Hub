@@ -1,7 +1,9 @@
-# Project plan: Big idea, timeline, parts needed, fall-back plan.
-## Big Idea: The user can set timers,by physical knobs,to control multiple stoves to turn on, turn off, or adjust power
+# Project plan
+## Big Idea: 
+The user can set timers,by physical knobs,to control multiple stoves to turn on, turn off, or adjust power
 
-## Specific Application: A control panel comprising four rotary encoders or joysticks and some LED signal lights is used to set time for individual stove’s action such as turning on, off, or changing power level. To physically rotate the stove knobs, we want to provide the option of remotely controlling a servo motor to do the job for the user.
+## Specific Application: 
+A control panel comprising four rotary encoders or joysticks and some LED signal lights is used to set time for individual stove’s action such as turning on, off, or changing power level. To physically rotate the stove knobs, we want to provide the option of remotely controlling a servo motor to do the job for the user.
 
 Well Done is a stove add-on system that offers an individual timer for each stove to save users from the trouble of keeping track of the cooking time themselves.
 
@@ -66,12 +68,13 @@ Soldered the back of Adafruit rotary encoders to modify each’s i2C address
 Connected all parts to MiniPi TFT screen with jumpers as following:
 
 
-# Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
+# Archive of all code, design patterns, etc. used in the final design
+
 
 # Video of someone using your project
 https://drive.google.com/file/d/1V_nF6uEfMx32FJ5AoiEJPgi34Yzn_owL/view?usp=sharing
 
-# Reflections on process (What have you learned or wish you knew at the start?)
+# Reflections on process
 More research and thorough initial planning: 
 Screen for display
 Eyespi couldn’t function
@@ -95,11 +98,14 @@ Challenges in 3D printing and fixing the rotary encoder to the board emphasized 
 
 # Group work distribution questionnaire
 Jamie
+
 Timer logic programming
 Laser Cut
 Device Design
 Hardware assembly
+
 Yunfei
+
 Timer logic programming
 Laser Cut
 Device Design
