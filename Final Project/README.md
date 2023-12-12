@@ -57,11 +57,11 @@ Improved message readability by adjust their alignment and color.<br>
 
 #### Device Costume
 Drafted a rough layout of the stovetop in Adobe Illustrator<br>
-< img width="731" alt="Screen Shot 2023-12-09 at 6 26 01 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/206fa67b-3629-42ca-a42f-fd240acc63a7">
+<img width="731" alt="Screen Shot 2023-12-09 at 6 26 01 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/206fa67b-3629-42ca-a42f-fd240acc63a7">
 
 Measured the dimensions of needed components (e.g. Pi, Pi screen, rotary encoder platform, etc.)<br>
 Changed from horizontal to portrait layout design.<br>
-< img width="849" alt="Screen Shot 2023-12-09 at 6 26 52 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/7aaeae9e-5e7a-4568-b532-746f94a051e0">
+<img width="849" alt="Screen Shot 2023-12-09 at 6 26 52 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/7aaeae9e-5e7a-4568-b532-746f94a051e0">
 
 Laser cut steps:<br>
 Cut out the box structure<br>
@@ -75,7 +75,7 @@ Embellished the box surface with reflective silver material<br>
 Soldered the back of Adafruit rotary encoders to modify each’s i2C address<br>
 Connected all parts to MiniPi TFT screen with jumpers as following:<br>
 
-< img width="513" alt="Screen Shot 2023-12-09 at 6 27 59 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/0a77c947-ef30-4ce3-bd90-068e5c7c8e3e">
+<img width="513" alt="Screen Shot 2023-12-09 at 6 27 59 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/0a77c947-ef30-4ce3-bd90-068e5c7c8e3e">
 
 #### Final Product Video
 
